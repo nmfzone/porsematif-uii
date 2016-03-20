@@ -135,7 +135,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">Verifikasi</div>
                         <div class="panel-body">
-                            <div class="form-group">
+                            <div class="form-group{{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }}">
                                 <label class="col-md-3 control-label">Captcha</label>
 
                                 <div class="col-md-6">
