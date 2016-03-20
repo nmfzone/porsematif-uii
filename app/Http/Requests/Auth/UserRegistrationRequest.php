@@ -31,7 +31,7 @@ class UserRegistrationRequest extends Request
             'competition'           => 'required',
             'institution_name'      => 'required|max:255',
             'institution_address'   => 'required|max:255',
-            //'g-recaptcha-response'  => 'required|captcha',
+            'g-recaptcha-response'  => 'required|captcha',
             'accept_terms'          => 'required',
         ];
     }
