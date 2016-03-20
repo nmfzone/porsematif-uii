@@ -1,0 +1,263 @@
+.filter-gradient.blue:after {
+  background: radial-gradient(ellipse at center, #1e5799 0%,rgba(54, 151, 142, 0.8) 50%,#0C526C 100%,#3d7eaa 100%,#182848 100%,#6e48aa 100%,#6e48aa 100%);
+}
+
+#text-opening {
+  font-family: 'Daydream', serif;
+  color: #FFF;
+  text-align: center;
+}
+
+#text-opening h4, #text-opening h5 {
+  font-family: 'Helv', serif;
+}
+
+#text-opening h1 {
+  font-family: 'Big John', serif;
+  font-size: 75px;
+  font-weight: bold;
+}
+
+.btn-social>:first-child {
+  border-right: none;
+}
+
+#competitions .card .text h4 {
+  font-size: 20px;
+  font-family: 'Big John', serif;
+}
+
+#competitions .card .icon {
+  margin-top: 15%;
+}
+
+#competitions .web-dev .card.card-blue,
+#competitions .programming .card.card-blue {
+  -webkit-transition: all 0.4s ease 0s;
+  -moz-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  -ms-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+#competitions .web-dev .card.card-blue:hover,
+#competitions .programming .card.card-blue:hover {
+  background: #111;
+}
+
+#contacts {
+  color: #FFF;
+}
+
+#contacts h4 {
+  color: #FFF;
+}
+
+#contacts .t-box .title {
+  margin: 0 auto;
+}
+
+#contacts .t-box .logo {
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid #FFF;
+  border-radius: 70px;
+  width: 60px;
+  margin-top: 80px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#contacts .t-box .logo i {
+  font-size: 50px;
+  padding: 5px 0;
+}
+
+#contacts .t-box .content {
+  margin-top: 30px;
+}
+
+#contacts .t-box .content p {
+  font-size: 13px;
+  margin-top: 0;
+  font-weight: 100;
+  line-height: 11px;
+}
+
+/* Pages Site Custom */
+#pages.landing-page .parallax {
+  height: 100px;
+  background: #1C1D26;
+}
+
+#pages .filter-gradient.blue:after {
+  background: none;
+}
+
+#pages .main-content {
+  margin: 60px 0;
+}
+
+#pages .main-content .contect-logo {
+  width: 250px;
+}
+
+#pages .main-content h3.title {
+  font-size: 40px;
+  font-family: 'Big John', serif;
+  margin-bottom: 45px;
+}
+
+#pages .p-s-left,
+#pages .p-s-right {
+  -moz-box-shadow: 0px 0px 8px #9697c1;
+  -webkit-box-shadow: 0px 0px 8px #9697c1;
+  box-shadow: 0px 0px 8px #9697c1;
+  padding: 25px 10px;
+}
+
+#pages .p-s-left ul.tabs {
+  list-style: none;
+  -webkit-padding-start: 0px;
+}
+
+#pages .p-s-left ul.tabs li {
+  background: #384047;
+  width: 100%;
+  height: 50px;
+  margin: 25px 0;
+  -webkit-transition: all 0.4s ease 0s;
+  -moz-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  -ms-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+  line-height: 50px;
+}
+
+#pages .p-s-left ul.tabs li a,
+#pages .p-s-left ul.tabs li a:link,
+#pages .p-s-left ul.tabs li a:visited {
+  display: inline-block;
+  vertical-align: middle;
+  color: #FFF;
+}
+
+#pages .p-s-left ul.tabs li:hover {
+  background: #0c86f2;
+  cursor: pointer;
+}
+
+#pages .p-s-left ul.tabs li:hover > a {
+  color: #000;
+}
+
+#pages .p-s-right {
+  text-align: left;
+  padding: 35px 45px;
+}
+
+#pages .p-s-left.col-md-2 {
+  margin-bottom: 40px;
+}
+
+#pages .p-s-right.col-md-6 {
+
+}
+
+@media (max-width: 991px) {
+  #pages .row.main-content {
+    margin: 30px 5%;
+  }
+}
+
+@media (min-width: 992px) {
+  #pages .p-s-left,
+  #pages .p-s-right {
+    -moz-box-shadow: 0px 0px 8px #9697c1;
+    -webkit-box-shadow: 0px 0px 8px #9697c1;
+    box-shadow: 0px 0px 8px #9697c1;
+  }
+
+  #pages .p-s-left.col-md-2 {
+    min-height: 300px;
+    margin-left: 14%;
+  }
+
+  #pages .p-s-right.col-md-6 {
+    min-height: 500px;
+    margin-left: 5%;
+  }
+}
+
+
+/* Login Page */
+.loginPage {
+
+}
+
+.loginPage .container {
+  margin-top: 4%;
+}
+
+.loginPage .company-logo {
+  margin-bottom: 20px;
+}
+
+/* Registration Page */
+#registerPage {
+  margin: 80px auto;
+}
+
+#registerPage .btn {
+  opacity: 1;
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+#registerPage .btn-primary {
+  color: #fff;
+  background-color: #337AB7;
+  border-color: #2e6da4;
+}
+#registerPage .btn-primary:focus,
+#registerPage .btn-primary.focus {
+  color: #fff;
+  background-color: #286090;
+  border-color: #122b40;
+}
+#registerPage .btn-primary:hover {
+  color: #fff;
+  background-color: #286090;
+  border-color: #204d74;
+}
+
+/* Custom Bootatrap */
+.row-centered {
+  text-align:center;
+}
+.col-centered {
+  display:inline-block;
+  float:none;
+  text-align:left;
+  margin-right:-4px;
+}
+.col-centered h4 {
+  text-align: center;
+}
