@@ -77,5 +77,8 @@ Route::group(['middleware' => 'auth'], function ()
             'uses' => 'Dashboard\User\UserController@setting'
         ]);
         Route::resource('users', 'Dashboard\User\UserController');
+
+        Route::get('pendaftaran', 'Dashboard\User\PendaftaranController@index');
+        Route::post('pendaftaran', 'Dashboard\User\PendaftaranController@store');
     });
 });

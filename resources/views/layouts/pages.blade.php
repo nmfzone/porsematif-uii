@@ -7,7 +7,7 @@
 
         <title>{{ Site::get('site_name') }}</title>
 
-        <!-- <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'> -->
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
         <link href="{{ asset('assets/css/fonts.min.css') }}" rel="stylesheet" type="text/css">
 
         <link href="{{ asset('assets/css/style.min.css') }}" rel="stylesheet" type="text/css">

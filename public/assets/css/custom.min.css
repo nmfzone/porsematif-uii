@@ -98,7 +98,12 @@
   margin: 60px 0;
 }
 
-#pages .main-content .contect-logo {
+#pages .main-content .contest-logo {
+  width: 250px;
+  margin: 0 auto;
+}
+
+#pages .main-content .contest-logo img {
   width: 250px;
 }
 
@@ -154,6 +159,27 @@
 #pages .p-s-right {
   text-align: left;
   padding: 35px 45px;
+  font-size: 15px;
+  font-family: 'Lato', serif;
+  line-height: 25px;
+}
+
+#pages .p-s-right h3 {
+
+}
+
+#pages .p-s-right ul,
+#pages .p-s-right ol {
+  margin-top: 10px;
+}
+
+#pages .p-s-right ul li {
+  margin-top: 10px;
+}
+
+#pages .p-s-right ol li {
+  font-weight: normal;
+  margin-top: 10px;
 }
 
 #pages .p-s-left.col-md-2 {
@@ -256,6 +282,30 @@
 
 #registerPage .submit-button .btn {
   padding: 8px 15px;
+}
+
+/* Terms Page */
+#terms .pages-logo {
+  text-align: center;
+  width: auto;
+  float: none;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+#terms .pages-logo img {
+  border-radius: 10px;
+  width: 60%;
+}
+
+#terms .content {
+  font-size: 16px;
+  line-height: 25px;
+  font-family: 'Lato', serif;
+}
+
+#terms .content ul {
+  margin-top: 20px;
 }
 
 /* Custom Bootatrap */

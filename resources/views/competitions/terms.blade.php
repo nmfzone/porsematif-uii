@@ -1,33 +1,21 @@
 @extends('layouts.pages')
 
-@section('javascript')
-    <script src="{{ asset('assets/js/custom.js') }}" type="text/javascript"></script>
-@endsection
-
 @section('content')
 
-    <div class="row main-content text-center">
-        <div class="contest-logo">
-            <img src="{{ asset('assets/images/programming.png') }}">
-        </div>
-        <h3 class="title">Programming</h3>
-        <div class="col-md-2 col-md-offset-1 p-s-left">
-            <ul class="tabs">
-                <li><a href="#tab1">Tab 1</a></li>
-                <li><a href="#tab2">Tab 2</a></li>
-                <li><a href="#tab3">Tab 3</a></li>
-            </ul>
-        </div>
-        <div class="col-md-6 p-s-right">
-            <div class="tabContainer">
-                <div id="tab1" class="tabContent">
-                    Content in Tab 1
+    <div class="container">
+        <div class="row main-content" id="terms">
+            <div class="col-md-12">
+                <div class="pages-logo">
+                    <img src="{{ asset('assets/images/terms.jpg') }}">
                 </div>
-                <div id="tab2" class="tabContent">
-                    Content in Tab 2
-                </div>
-                <div id="tab3" class="tabContent">
-                    Content in Tab 3
+                <div class="panel panel-default">
+                    <div class="panel-heading">Terms and Conditions</div>
+                    <div class="panel-body content">
+                        Setiap orang yang melakukan pendaftaran Porsematif 2016 melalui website ini, wajib menyetujui dan mematuhi semua hal dibawah ini :<br>
+                        <ul>
+                            <li>Pertama</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
