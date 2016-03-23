@@ -32,7 +32,7 @@
                     <a href="{{ Site::get('site_url') }}">
                         <div class="logo-container">
                             <div class="logo">
-                                <img src="{{ asset('assets/img/new_logo.png') }}" alt="Creative Tim Logo">
+                                {!! Site::displayCompanyLogo(200, 0, 0) !!}
                             </div>
                         </div>
                     </a>

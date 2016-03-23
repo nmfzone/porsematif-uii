@@ -17,6 +17,6 @@ interface SiteOptionContract
 	 *
 	 * @return string
 	 */
-    public static function displayCompanyLogo($width = '', $height = '');
+    public static function displayCompanyLogo($width, $height, $type);
 
 }

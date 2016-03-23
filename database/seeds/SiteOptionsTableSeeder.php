@@ -21,11 +21,15 @@ class SiteOptionsTableSeeder extends Seeder
             ],
             [
                 "name"  => "site_name",
-                "value" => "Porsematif 2016"
+                "value" => env('SITE_NAME', 'Awesome')
+            ],
+            [
+                "name"  => "site_logo",
+                "value" => "assets/images/porsematif.png"
             ],
             [
                 "name"  => "site_url",
-                "value" => "http://localhost:8000"
+                "value" => env('SITE_URL', 'http://localhost:8000')
             ],
         ];
 

@@ -24,7 +24,7 @@
     <![endif]-->
 
 </head>
-<body>
+<body class="userDashboard">
 
     <div id="wrapper">
 
@@ -243,7 +243,7 @@
                     <ul class="nav" id="side-menu">
                         <li class="expand-top">
                             <div class="company-logo">
-                                {!! Site::displayCompanyLogo(120) !!}
+                                {!! Site::displayCompanyLogo(200, 0, 1) !!}
                             </div>
                         </li>
                         <li>

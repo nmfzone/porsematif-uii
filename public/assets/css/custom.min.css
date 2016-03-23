@@ -9,7 +9,7 @@
 }
 
 #text-opening h4, #text-opening h5 {
-  font-family: 'Helv', serif;
+  font-family: 'Montserrat', serif;
 }
 
 #text-opening h1 {
@@ -20,6 +20,26 @@
 
 .btn-social>:first-child {
   border-right: none;
+}
+
+.logo-container .logo {
+  border-radius: 0%;
+  border: none;
+  width: 200px;
+  float: left;
+  margin-top: 10px;
+  margin-left: -15px;
+}
+
+.landing-page .section-presentation img {
+  height: auto;
+  position: relative;
+}
+
+.landing-page .section-presentation img:first-child {
+  margin-top: 35px;
+  padding-left: 20px;
+  margin-bottom: -50px;
 }
 
 #competitions .card .text h4 {
@@ -113,12 +133,15 @@
   margin-bottom: 45px;
 }
 
+#pages .p-s-left {
+  padding: 0 10px;
+}
+
 #pages .p-s-left,
 #pages .p-s-right {
   -moz-box-shadow: 0px 0px 8px #9697c1;
   -webkit-box-shadow: 0px 0px 8px #9697c1;
-  box-shadow: 0px 0px 8px #9697c1;
-  padding: 25px 10px;
+  box-shadow: 0px 0px 8px #9697c1; 
 }
 
 #pages .p-s-left ul.tabs {
@@ -165,12 +188,16 @@
 }
 
 #pages .p-s-right h3 {
+  margin-bottom: 10px;
+}
 
+#pages .p-s-right h3:not(:first-child) {
+  margin-top: 40px;
 }
 
 #pages .p-s-right ul,
 #pages .p-s-right ol {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 #pages .p-s-right ul li {
@@ -222,7 +249,7 @@
 }
 
 .loginPage .container {
-  margin-top: 4%;
+  margin-top: 2%;
 }
 
 .loginPage .company-logo {
@@ -306,6 +333,40 @@
 
 #terms .content ul {
   margin-top: 20px;
+}
+
+/* Admin and User Dashboard */
+.adminDashboard,
+.userDashboard {
+  
+}
+
+.adminDashboard .company-logo,
+.userDashboard .company-logo {
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+/* Admin Dashboard */
+.adminDashboard {
+
+}
+
+.adminDashboard .dashboard-message {
+  margin: 5% 0;
+  padding-bottom: 5%;
+  font-family: 'Lato';
+  font-size: 42px;
+  font-weight: 800;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.adminDashboard .dashboard-message .user-name {
+  font-size: 22px;
+}
+
+/* User Dashboard */
+.userDashboard {
 }
 
 /* Custom Bootatrap */

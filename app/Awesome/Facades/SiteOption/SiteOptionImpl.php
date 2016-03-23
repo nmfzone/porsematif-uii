@@ -30,19 +30,24 @@ class SiteOptionImpl implements SiteOptionContract
 	 *
 	 * @return string
 	 */
-    public static function displayCompanyLogo($width = '', $height = '')
+    public static function displayCompanyLogo($width, $height, $type)
     {
         try {
-            $img = self::get('logo');
+            $siteName = self::get('site_name');
+            $img = self::get('site_logo');
         } catch(Exception $e) {
+            $siteName = "Awesome";
             $img = "/assets/images/uii.png";
         }
-        if (!empty($width)) {
+        if ($width != 0) {
             $width = " width='" . $width . "px'";
         }
-        if (!empty($height)) {
+        if ($height != 0) {
             $height = " height='" . $height . "px'";
         }
-        return "<img class='center-block' src='" . asset($img) . "'" . $width . $height . " />";
+        if ($type == 1) {
+            $img = "assets/images/porsematif-big.png";
+        }
+        return "<img class='center-block' alt='" . $siteName .  "' src='" . asset($img) . "'" . $width . $height . " />";
     }
 }

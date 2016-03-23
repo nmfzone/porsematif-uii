@@ -7,7 +7,7 @@
 
         <title>{{ Site::get('site_name') }}</title>
 
-        <!-- <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'> -->
+        <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Montserrat&#038;ver=4.4.2' type='text/css' media='all' />
         <link href="{{ asset('assets/css/fonts.min.css') }}" rel="stylesheet" type="text/css">
 
         <link href="{{ asset('assets/css/style.min.css') }}" rel="stylesheet" type="text/css">
@@ -30,7 +30,7 @@
                     <a href="{{ Site::get('site_url') }}">
                         <div class="logo-container">
                             <div class="logo">
-                                <img src="assets/img/new_logo.png" alt="Creative Tim Logo">
+                                {!! Site::displayCompanyLogo(200, 0, 0) !!}
                             </div>
                         </div>
                     </a>
@@ -73,13 +73,13 @@
         <div class="wrapper">
             <div class="parallax filter-gradient blue" data-color="blue" id="home">
                 <div class="parallax-background">
-                    <img class="parallax-background-image" src="{{ asset('assets/images/header.jpg') }}">
+                    <img class="parallax-background-image" src="{{ asset('assets/images/bg-header1.jpg') }}">
                 </div>
                 <div class="container">
                     <div class="row">
                         <div class="col-md-10 col-md-offset-1">
                             <div id="text-opening" class="description">
-                                <h4>Teknik Informatika Universitas Islam Indonesia</h4>
+                                <h4>HMTF FTI UNIVERSITAS ISLAM INDONESIA</h4>
                                 <h5>proudly present</h5>
                                 <h1>PORSEMATIF 2016</h1>
                                 <br>
@@ -94,50 +94,52 @@
                         <div class="col-md-6">
                             <div class="description">
                                 <h4 class="header-text">Apa itu Porsematif?</h4>
-                                <p>And your app is also probably social, awesome, easy-to-use and vital to users. This is the place to enlist all the good things that your app has to share. Focus on the benefits that the uers will receive. Try to combine imaginery with text and show meaningful printscreens from your app, that will make it clear what exactly the basic functions are. </p>
-                                <p>Try to make it very clear for the people browsing the page that this product will enrich their life and will make a nice addition to the homescreen.
-                                <p>
+                                <p>PORSEMATIF (Pekan Olahraga Seni dan Edukasi Mahasiswa Teknik Informatika) merupakan kegiatan tahunan yang diselenggarakan oleh Himpunan Mahasiswa Teknik Informatika (HMTF) Universitas Islam Indonesia. Kegiatan ini ibarat 17an-nya Teknik Informatika Universitas Islam Indonesia.</p>
+                                <p>Di dalam kegiatan ini terdapat 4 bidang perlombaan yaitu bidang akademik, olahraga, seni, dan game. Kegiatan ini bertujuan untuk mewadahi potensi dan bakat mahasiswa teknik informatika dalam 4 bidang tersebut. Porsematif tahun 2016 berbeda dengan tahun sebelumya dimana jumlah pendaftar lebih meningkat karena terdapat perlombaan dalam bidang akademik yang ruang lingkupnya dibuka untuk se-regional DIY.</p>
                             </div>
                         </div>
-                        <div class="col-md-5 col-md-offset-1 hidden-xs">
-                            <img src="{{ asset('assets/img/template/mac.png') }}"/>
+                        <div class="col-md-5 col-md-offset-1 text-center">
+                            <img src="{{ asset('assets/images/hmtf.png') }}" width="450px" />
+                            <img src="{{ asset('assets/images/porsematif-big.png') }}" width="500px" />
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="section section-demo">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div id="description-carousel" class="carousel fade" data-ride="carousel">
-                                <div class="carousel-inner">
-                                    <div class="item">
-                                        <img src="assets/img/template/examples/home_33.jpg" alt="">
-                                    </div>
-                                    <div class="item active">
-                                        <img src="assets/img/template/examples/home_22.jpg" alt="">
-                                    </div>
-                                    <div class="item">
-                                        <img src="assets/img/template/examples/home_11.jpg" alt="">
-                                    </div>
-                                </div>
-                                <ol class="carousel-indicators carousel-indicators-blue">
-                                    <li data-target="#description-carousel" data-slide-to="0" class=""></li>
-                                    <li data-target="#description-carousel" data-slide-to="1" class="active"></li>
-                                    <li data-target="#description-carousel" data-slide-to="2" class=""></li>
-                                </ol>
-                            </div>
-                        </div>
-                        <div class="col-md-5 col-md-offset-1">
-                            <h4 class="header-text">Easy to integrate</h4>
-                            <p>
-                                With all the apps that users love! Make it easy for users to share, like, post and tweet their favourite things from the app. Be sure to let users know they continue to remain connected while using your app!
-                            </p>
-                            <a href="http://www.creative-tim.com/product/awesome-landing-page" id="Demo3" class="btn btn-fill btn-info" data-button="info">Get Free Demo</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <!--
+              <div class="section section-demo">
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-md-6">
+                              <div id="description-carousel" class="carousel fade" data-ride="carousel">
+                                  <div class="carousel-inner">
+                                      <div class="item">
+                                          <img src="assets/img/template/examples/home_33.jpg" alt="">
+                                      </div>
+                                      <div class="item active">
+                                          <img src="assets/img/template/examples/home_22.jpg" alt="">
+                                      </div>
+                                      <div class="item">
+                                          <img src="assets/img/template/examples/home_11.jpg" alt="">
+                                      </div>
+                                  </div>
+                                  <ol class="carousel-indicators carousel-indicators-blue">
+                                      <li data-target="#description-carousel" data-slide-to="0" class=""></li>
+                                      <li data-target="#description-carousel" data-slide-to="1" class="active"></li>
+                                      <li data-target="#description-carousel" data-slide-to="2" class=""></li>
+                                  </ol>
+                              </div>
+                          </div>
+                          <div class="col-md-5 col-md-offset-1">
+                              <h4 class="header-text">Easy to integrate</h4>
+                              <p>
+                                  With all the apps that users love! Make it easy for users to share, like, post and tweet their favourite things from the app. Be sure to let users know they continue to remain connected while using your app!
+                              </p>
+                              <a href="http://www.creative-tim.com/product/awesome-landing-page" id="Demo3" class="btn btn-fill btn-info" data-button="info">Get Free Demo</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            -->
             <div class="section section-features" id="competitions">
                 <div class="container">
                     <h4 class="header-text text-center">Competitions</h4>

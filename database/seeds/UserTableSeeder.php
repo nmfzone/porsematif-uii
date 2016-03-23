@@ -23,10 +23,10 @@ class UserTableSeeder extends Seeder
         $userRole   = Role::whereName('User')->first()->id;
 
         User::create(array(
-            'username'              => 'admin',
+            'username'              => 'porsematif_admin',
             'name'                  => 'Administrator',
             'email'                 => 'admin@porsematif.com',
-            'password'              => 'admin',
+            'password'              => '$!weareporsematif16!$',
             'institution_name'      => 'Universitas Islam Indonesia',
             'institution_address'   => 'Jalan Kaliurang Km. 14.5, Besi, Sleman',
             'role_id'               => $adminRole,

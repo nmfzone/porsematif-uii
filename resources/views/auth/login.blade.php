@@ -13,7 +13,7 @@
     <div class="row">
             <div class="col-md-6 col-md-offset-3">
                 <div class="company-logo">
-                    <a href="{{ Site::get('site_url') }}">{!! Site::displayCompanyLogo(100) !!}</a>
+                    <a href="{{ Site::get('site_url') }}">{!! Site::displayCompanyLogo(300, 0, 1) !!}</a>
                 </div>
                 <div class="panel panel-default">
                     <div class="panel-heading">Login</div>
