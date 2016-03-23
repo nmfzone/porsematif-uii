@@ -51,16 +51,16 @@
                         <li>
                             <a href="{{ url('auth/login') }}">Login</a>
                         </li>
-                        <li class="sign-up">
+                        <li id="sign-up">
                             <a href="{{ url('auth/register') }}">Register</a>
                         </li>
                         @else
                         @if (auth()->user()->hasRole('admin'))
-                        <li class="go-dashboard">
+                        <li id="go-dashboard">
                             <a href="{{ url('dashboard/protected') }}">Dashboard</a>
                         </li>
                         @elseif (auth()->user()->hasRole('user'))
-                         <li class="go-dashboard">
+                         <li id="go-dashboard">
                             <a href="{{ url('dashboard') }}">Dashboard</a>
                         </li>
                         @endif

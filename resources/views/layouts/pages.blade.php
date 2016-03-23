@@ -49,12 +49,24 @@
                          <li>
                             <a href="{{ url('#contacts') }}">Contacts</a>
                         </li>
+                        @if (auth()->guest())
                         <li>
                             <a href="{{ url('auth/login') }}">Login</a>
                         </li>
-                        <li class="sign-up">
+                        <li id="sign-up">
                             <a href="{{ url('auth/register') }}">Register</a>
                         </li>
+                        @else
+                        @if (auth()->user()->hasRole('admin'))
+                        <li id="go-dashboard">
+                            <a href="{{ url('dashboard/protected') }}">Dashboard</a>
+                        </li>
+                        @elseif (auth()->user()->hasRole('user'))
+                         <li id="go-dashboard">
+                            <a href="{{ url('dashboard') }}">Dashboard</a>
+                        </li>
+                        @endif
+                        @endif
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->

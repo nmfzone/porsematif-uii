@@ -22,6 +22,26 @@
   border-right: none;
 }
 
+#go-dashboard a,
+#sign-up a {
+  margin-top: 18px;
+}
+
+#go-dashboard a,
+#sign-up a {
+  background: #FFF7FF;
+  padding: 8px 10px;
+  border-radius: 5px;
+  color: #000;
+  opacity: 1;
+}
+
+#go-dashboard a:hover,
+#sign-up a:hover {
+  background: blue;
+  color: #FFF;
+}
+
 .logo-container .logo {
   border-radius: 0%;
   border: none;
