@@ -123,7 +123,7 @@ gulp.task('build-vendor-js', function() {
 gulp.task('build-css', function() {
   console.log("\n Processing Laravel Assets! ".bgBlue.white.bold);
   gulp.src(inputLaravelCss)
-  .pipe(gutil.env.type === 'production' ? cssmin() : gutil.noop())
+  .pipe(gutil.env.env === 'production' ? cssmin() : gutil.noop())
   .pipe(rename({
     suffix: '.min'
   }))
@@ -134,12 +134,12 @@ gulp.task('build-css', function() {
 gulp.task('build-js', function() {
   gulp.src(inputLaravelJsConcat)
   .pipe(concat(laravelConcatName.javascript))
-  .pipe(gutil.env.type === 'production' ? uglify() : gutil.noop())
+  .pipe(gutil.env.env === 'production' ? uglify() : gutil.noop())
   .pipe(flatten())
   .pipe(gulp.dest(outputLaravel.javascript));
 
   gulp.src(inputLaravelJsNotConcat)
-  .pipe(gutil.env.type === 'production' ? uglify() : gutil.noop())
+  .pipe(gutil.env.env === 'production' ? uglify() : gutil.noop())
   .pipe(flatten())
   .pipe(gulp.dest(outputLaravel.javascript));
   //.pipe(livereload());
