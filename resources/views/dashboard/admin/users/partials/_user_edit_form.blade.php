@@ -12,12 +12,24 @@
     <input type="email" class="form-control" name="email" value="{{ $user->email }}">
 @endsection
 
-@section('input_role')
-    @foreach($roles as $role)
-        @if ($role->id == $user->role->id)
-            <option value="{{ $role->id }}" selected>{{ $role->name }}</option>
+@section('input_institution_name')
+    <input type="text" class="form-control" name="institution_name" value="{{ $user->institution_name }}">
+@endsection
+
+@section('input_institution_address')
+    <input type="text" class="form-control" name="institution_address" value="{{ $user->institution_address }}">
+@endsection
+
+@section('input_category')
+    @foreach($competitions as $competition)
+        @if(in_array($competition->id, $registered_competitions))
+            <div class="checkbox">
+                <label><input type="checkbox" name="competition[]" checked value="{{ $competition->id }}">{{ $competition->name }}</label>
+            </div>
         @else
-            <option value="{{ $role->id }}">{{ $role->name }}</option>
+            <div class="checkbox">
+                <label><input type="checkbox" name="competition[]" value="{{ $competition->id }}">{{ $competition->name }}</label>
+            </div>
         @endif
     @endforeach
 @endsection

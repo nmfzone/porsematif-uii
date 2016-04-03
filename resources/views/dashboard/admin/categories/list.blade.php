@@ -14,29 +14,24 @@
 
 @section('content')
 <div class="row">
-
-    @include('layouts._flash')
-
-    <table class="table table-striped">
+    <table class="table table-striped the-tables">
         <tr>
             <th>#</th>
-            <th>Username</th>
-            <th>Name</th>
-            <th>Role</th>
+            <th>Nama Kompetisi</th>
+            <th>Tipe Kompetisi</th>
             <th colspan="2" class="text-center">Action</th>
         </tr>
-        @foreach($spareparts as $key => $sparepart)
+        @foreach($categories as $key => $category)
             <tr>
                 <td>{{ ++$key }}</td>
-                <td>{{ $sparepart->username }}</td>
-                <td>{{ $sparepart->name }}</td>
-                <td>{{ $sparepart->role->name }}</td>
-                <td class="text-center"><a href="{{ url('/dashboard/spareparts/' . $sparepart->id . '/edit') }}" class="btn btn-warning">Edit</a></td>
-                <td class="text-center"><a href="{{ url('/dashboard/spareparts/' . $sparepart->id) }}" data-delete="" class="btn btn-danger">Delete</a></td>
+                <td>{{ $category->name }}</td>
+                <td>{{ $category->type }}</td>
+                <td class="text-center"><a href="{{ url('/dashboard/protected/competitions/' . $category->id . '/edit') }}" class="btn btn-warning">Edit</a></td>
+                <td class="text-center"><a href="{{ url('/dashboard/protected/competitions/' . $category->id) }}" class="btn btn-danger delete-this">Delete</a></td>
             </tr>
         @endforeach
     </table>
 
-    {!! $spareparts->render() !!}
+    {!! $categories->render() !!}
 </div>
 @endsection

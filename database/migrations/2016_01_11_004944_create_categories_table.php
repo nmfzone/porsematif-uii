@@ -16,6 +16,14 @@ class CreateCategoriesTable extends Migration
         {
             $table->increments('id');
             $table->string('name')->unique();
+            $table->integer('price')->default(0);
+            $table->timestamp('started')->nullable();
+            $table->timestamp('ended')->nullable();
+            $table->integer('min_user')->default(0);
+            $table->integer('max_user')->nullable(0);
+            $table->longText('description')->nullable();
+            $table->string('type');
+            $table->boolean('status')->default(0);
         });
     }
 

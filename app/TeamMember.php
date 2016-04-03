@@ -18,7 +18,7 @@ class TeamMember extends Model
      *
      * @var array
      */
-    protected $fillable = ['name'];
+    protected $fillable = ['nim', 'name', 'email', 'generation', 'phone', 'position', 'team_id'];
 
     /**
      * Get the teams(users) record associated with the user team.

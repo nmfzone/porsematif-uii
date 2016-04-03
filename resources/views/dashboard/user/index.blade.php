@@ -6,94 +6,55 @@
 
 @section('content')
 
-    <div class="row">
-        <div class="col-lg-3 col-md-6">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa fa-comments fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
-                            <div class="huge">26</div>
-                            <div>New Comments!</div>
-                        </div>
+    <div class="row row-centered homepage">
+        <div class="col-md-10 col-centered">
+            @if($competition == null)
+                <div class="col-md-12 row-centered">
+                    <div class="col-md-8 alert alert-warning col-centered messages">
+                        Kamu belum terdaftar di kompetisi manapun.<br>
+                        Silahkan klik <a href="{{ url('dashboard/competitions/register') }}">disini</a> untuk melakukan registrasi kompetisi.
                     </div>
                 </div>
-                <a href="#">
-                    <div class="panel-footer">
-                        <span class="pull-left">View Details</span>
-                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6">
-            <div class="panel panel-green">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa fa-tasks fa-5x"></i>
+            @else
+                <h4>Detail Kompetisi</h4>
+                {{--*/ $total_price = 0 /*--}}
+                {{--*/ $price = 0 /*--}}
+                @foreach($competition_details as $detail)
+                    <div class="col-md-12 row-centered user-comp-detail">
+                        <div class="col-md-5">
+                            {{ $category->find($detail->category_id)->name }}
                         </div>
-                        <div class="col-xs-9 text-right">
-                            <div class="huge">12</div>
-                            <div>New Tasks!</div>
+                        <div class="col-md-2">
+                            @if ($detail->verified == 0)
+                                {{--*/ $price = $category->find($detail->category_id)->price /*--}}
+                                Rp {{ $price }},00
+                                {{--*/ $total_price += $price /*--}}
+                            @else
+                                <b>Lunas</b>
+                            @endif
                         </div>
-                    </div>
-                </div>
-                <a href="#">
-                    <div class="panel-footer">
-                        <span class="pull-left">View Details</span>
-                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6">
-            <div class="panel panel-yellow">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa fa-shopping-cart fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
-                            <div class="huge">124</div>
-                            <div>New Orders!</div>
+                        <div class="col-md-2">
+                            @if ($detail->verified == 1)
+                                <span class="btn btn-xs btn-success"><i class="glyphicon glyphicon-ok"></i> Terverifikasi</span>
+                            @else
+                                <span class="btn btn-xs btn-warning"><i class="glyphicon glyphicon-remove"></i> Belum Terverifikasi</span>
+                            @endif
                         </div>
                     </div>
-                </div>
-                <a href="#">
-                    <div class="panel-footer">
-                        <span class="pull-left">View Details</span>
-                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6">
-            <div class="panel panel-red">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa fa-support fa-5x"></i>
+                @endforeach
+                    @if ($total_price > 0)
+                        <div class="col-md-12 row-centered user-comp-detail">
+                            <div class="col-md-5">
+                                <b>Total</b>
+                            </div>
+                            <div class="col-md-2">
+                                Rp {{ $total_price }},00
+                            </div>
+                            <div class="col-md-2">
+                            </div>
                         </div>
-                        <div class="col-xs-9 text-right">
-                            <div class="huge">13</div>
-                            <div>Support Tickets!</div>
-                        </div>
-                    </div>
-                </div>
-                <a href="#">
-                    <div class="panel-footer">
-                        <span class="pull-left">View Details</span>
-                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
-            </div>
+                    @endif
+            @endif
         </div>
     </div>
 

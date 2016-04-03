@@ -14,9 +14,12 @@
 
 @section('content')
 <div class="row">
+    <div class="col-md-8 col-md-offset-2 detail-team">
+        <form class="form-horizontal" role="form" method="POST" action="#">
 
-    @include('layouts._flash')
+            @include('dashboard.user.users._user_details_form')
 
-    hoho
+        </form>
+    </div>
 </div>
 @endsection

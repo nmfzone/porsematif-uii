@@ -15,7 +15,7 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('username')->unique();
-            $table->string('name')->unique();
+            $table->string('name')->unique()->nullable();
             $table->string('email')->unique();
             $table->string('password', 60);
             $table->string('institution_name');
@@ -24,9 +24,6 @@ class CreateUsersTable extends Migration
             $table->text('activation_key')->nullable();
             $table->integer('role_id')->unsigned();
             $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
-            $table->integer('category_id')->unsigned();
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
-            $table->boolean('verified')->default(0);
             $table->boolean('status')->default(0);
             $table->rememberToken();
             $table->timestamps();

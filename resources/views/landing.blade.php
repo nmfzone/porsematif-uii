@@ -39,7 +39,13 @@
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
+                            <a href="{{ url('competitions/internal') }}">Internal</a>
+                        </li>
+                        <li>
                             <a href="{{ url('#events') }}">Events</a>
+                        </li>
+                        <li>
+                            <a href="{{ url('#competitions') }}">Competitions</a>
                         </li>
                         <li>
                             <a href="{{ url('#sponsors') }}">Sponsors</a>
@@ -79,9 +85,9 @@
                     <div class="row">
                         <div class="col-md-10 col-md-offset-1">
                             <div id="text-opening" class="description">
-                                <h4>HMTF FTI UNIVERSITAS ISLAM INDONESIA</h4>
-                                <h5>proudly present</h5>
+                                <h2>WELCOME TO</h2>
                                 <h1>PORSEMATIF 2016</h1>
+                                <h5>Pekan Olahraga, Seni dan Edukasi Mahasiswa Teknik Informatika 2016</h5>
                                 <br>
                             </div>
                         </div>
@@ -105,41 +111,25 @@
                     </div>
                 </div>
             </div>
-            <!--
-              <div class="section section-demo">
-                  <div class="container">
-                      <div class="row">
-                          <div class="col-md-6">
-                              <div id="description-carousel" class="carousel fade" data-ride="carousel">
-                                  <div class="carousel-inner">
-                                      <div class="item">
-                                          <img src="assets/img/template/examples/home_33.jpg" alt="">
-                                      </div>
-                                      <div class="item active">
-                                          <img src="assets/img/template/examples/home_22.jpg" alt="">
-                                      </div>
-                                      <div class="item">
-                                          <img src="assets/img/template/examples/home_11.jpg" alt="">
-                                      </div>
-                                  </div>
-                                  <ol class="carousel-indicators carousel-indicators-blue">
-                                      <li data-target="#description-carousel" data-slide-to="0" class=""></li>
-                                      <li data-target="#description-carousel" data-slide-to="1" class="active"></li>
-                                      <li data-target="#description-carousel" data-slide-to="2" class=""></li>
-                                  </ol>
-                              </div>
-                          </div>
-                          <div class="col-md-5 col-md-offset-1">
-                              <h4 class="header-text">Easy to integrate</h4>
-                              <p>
-                                  With all the apps that users love! Make it easy for users to share, like, post and tweet their favourite things from the app. Be sure to let users know they continue to remain connected while using your app!
-                              </p>
-                              <a href="http://www.creative-tim.com/product/awesome-landing-page" id="Demo3" class="btn btn-fill btn-info" data-button="info">Get Free Demo</a>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-            -->
+            <div class="section section-features" id="events">
+                <div class="container">
+                    <h4 class="header-text text-center">Events</h4>
+                    <div class="row row-centered">
+                        <div class="col-md-5 col-centered seminar">
+                            <div class="card card-blue">
+                                <div class="icon">
+                                     <a href="{{ url('events/seminar') }}"><img src="{{ asset('assets/images/seminar.png') }}" width="210px" /></a>
+                                </div>
+                                <div class="text">
+                                    <a href="{{ url('events/seminar') }}"><h4>Seminar</h4></a>
+                                    <h5>Regional Yogyakarta</h5>
+                                    <!-- <p>Test</p> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="section section-features" id="competitions">
                 <div class="container">
                     <h4 class="header-text text-center">Competitions</h4>
@@ -151,7 +141,7 @@
                                 </div>
                                 <div class="text">
                                     <a href="{{ url('competitions/web-development') }}"><h4>Web Development</h4></a>
-                                    <!-- <p>Test</p> -->
+                                    <h5>Regional Yogyakarta</h5>
                                 </div>
                             </div>
                         </div>
@@ -162,7 +152,7 @@
                                     </div>
                                 <div class="text">
                                     <a href="{{ url('competitions/programming') }}"><h4>Programming</h4></a>
-                                    <!-- <p>Test</p> -->
+                                    <h5>Regional Yogyakarta</h5>
                                 </div>
                             </div>
                         </div>
@@ -194,9 +184,9 @@
                                 <i class="fa fa-mobile"></i>
                             </div>
                             <div class="content">
-                                 <p>+6281871675188</p>
-                                <p>hello@porsematif.com</p>
-                                <p>Line : porse</p>
+                                 <p>+6281328733696</p>
+                                <p>nabilftd@gmail.com</p>
+                                <p>Line : nabilftd</p>
                             </div>
                         </div>
                          <div class="col-md-4 t-box">
@@ -218,43 +208,54 @@
             <div class="section section-testimonial">
                 <div class="container">
                     <h4 class="header-text text-center">What people think</h4>
-                    <div id="carousel-example-generic" class="carousel fade" data-ride="carousel">
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner" role="listbox">
-                            <div class="item">
-                                <div class="mask">
-                                    <img src="assets/img/faces/face-4.jpg">
-                                </div>
-                                <div class="carousel-testimonial-caption">
-                                    <p>Jay Z, Producer</p>
-                                    <h3>"I absolutely love your app! It's truly amazing and looks awesome!"</h3>
-                                </div>
-                            </div>
-                            <div class="item active">
-                                <div class="mask">
-                                    <img src="assets/img/faces/face-3.jpg">
-                                </div>
-                                <div class="carousel-testimonial-caption">
-                                    <p>Drake, Artist</p>
-                                    <h3>"This is one of the most awesome apps I've ever seen! Wish you luck Creative Tim!"</h3>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="mask">
-                                    <img src="assets/img/faces/face-2.jpg">
-                                </div>
-                                <div class="carousel-testimonial-caption">
-                                    <p>Rick Ross, Musician</p>
-                                    <h3>"Loving this! Just picked it up the other day. Thank you for the work you put into this."</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <ol class="carousel-indicators carousel-indicators-blue">
-                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                        </ol>
-                    </div>
+<div class="testimonialWrap">
+  <div class="testimonials">
+    <div id="tab1" class="testimonialContent">
+        <div class="face">
+            <img src="{{ asset('assets/images/hendrik.png') }}">
+        </div>
+        <div class="name">
+            <h1>Hendrik S.T, M.Eng</h1>
+            <h3>Kepala Jurusan Teknik Informatika FTI UII</h3>
+        </div>
+        <div class="testimoni">
+            <p>"Porsematif adalah salah satu kegiatan positif karena dapat menyalurkan minat & bakat mahasiswa. Kita boleh berprestasi dibidang akademik namun diluar itu kita juga harus bisa menyeimbangkan diri dengan kegiatan-kegiatan non-akademik selain itu kegiatan ini juga menjadi wadah interaksi bersama untuk saling bersilaturahmi. Ditahun ini Porsematif memiliki kemajuan dengan agenda perlombaan yang diperluas hingga bisa membantu memperkenalkan Teknik Informatika UII dan HMTF ke luar kampus"</p>
+        </div>
+    </div>
+    <div id="tab2" class="testimonialContent">
+        <div class="face">
+            <img src="{{ asset('assets/images/fathul.png') }}">
+        </div>
+        <div class="name">
+            <h1>Fathul Khair</h1>
+            <h3>Ketua HMTF FTI UII</h3>
+        </div>
+        <div class="testimoni">
+            <p>"Semoga di PORSEMATIF 2016 ini seluruh elemen  Jurusan Teknik Informatika UII baik Mahasiswa, Alumni dan Civitas Akademika dapat menyalurkan minat dan bakatnya dengan tanpa menghilangkan aspek kekeluargaan, serta mampu menjadi sebuah wadah silaturahmi bagi teman teman mahasiswa Jurusan Teknik Informatika dan Ilmu Komputer se DIY"</p>
+        </div>
+    </div>
+    <div id="tab3" class="testimonialContent">
+        <div class="face">
+            <img src="{{ asset('assets/images/tomy.png') }}">
+        </div>
+        <div class="name">
+            <h1>Tomy Afif</h1>
+            <h3>Kabid Batas HMTF FTI UII</h3>
+        </div>
+        <div class="testimoni">
+            <p>"Saya berharap semoga kedepannya porsematif semakin eksis guna membawa nama himpunan mahasiswa Teknik Informatika, Universitas Islam Indonesia yang lebih baik"</p>
+        </div>
+    </div>
+  </div>
+
+  <div class="testimonialTabs">
+    <ol>
+        <a href="#tab1"><li></li></a>
+        <a href="#tab2"><li></li></a>
+        <a href="#tab3"><li></li></a>
+    </ol>
+  </div>
+</div>
                 </div>
             </div>
             <div class="section section-gray section-clients" id="sponsors">
@@ -262,12 +263,8 @@
                     <h4 class="header-text">Our Sponsors</h4>
                     <div class="logos">
                         <ul class="list-unstyled">
-                            <li ><img src="assets/img/logos/adobe.png"/></li>
-                            <li ><img src="assets/img/logos/zendesk.png"/></li>
-                            <li ><img src="assets/img/logos/ebay.png"/></i>
-                            <li ><img src="assets/img/logos/evernote.png"/></li>
-                            <li ><img src="assets/img/logos/airbnb.png"/></li>
-                            <li ><img src="assets/img/logos/zappos.png"/></li>
+                            <li ><img src="{{ asset('assets/images/starcomp.png') }}" width="200px" /></li>
+                            <li ><img src="{{ asset('assets/images/mangrove.png') }}" width="150px" /></li>
                         </ul>
                     </div>
                 </div>
@@ -317,7 +314,6 @@
         </div>
 
         <script src="{{ asset('assets/js/script.min.js') }}" type="text/javascript"></script>
-        <script src="http://localhost:9090/livereload.js" type="text/javascript"></script>
-
+        <script src="{{ asset('assets/js/custom.js') }}" type="text/javascript"></script>
     </body>
 </html>

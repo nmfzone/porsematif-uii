@@ -25,10 +25,8 @@ class UserRegistrationRequest extends Request
     {
         return [
             'username'              => 'required|max:255|alpha_dash|unique:users',
-            'name'                  => 'required|max:255|unique:users',
             'email'                 => 'required|email|max:255|unique:users',
             'password'              => 'required|confirmed|min:6',
-            'competition'           => 'required',
             'institution_name'      => 'required|max:255',
             'institution_address'   => 'required|max:255',
             'g-recaptcha-response'  => 'required|captcha',

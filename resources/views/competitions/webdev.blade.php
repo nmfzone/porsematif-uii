@@ -50,6 +50,7 @@
                     <ul>
                         <li>Karya harus bisa direalisasikan menjadi bentuk aplikasi yang mempunyai nilai artistik, imajinatif, dan inovatif.</li>
                         <li>Semua karya pemenang tetap menjadi milik peserta.</li>
+                        <li>Peserta bebas menggunakan resource apapun (Framework, Template, dll) asalkan sesuai ketentuan dibawah.</li>
                         <li>Ide dan website yang di ikut sertakan dalam lomba belum pernah memenangkan kejuaraan sebelumnya.</li>
                         <li>Konten yang digunakan tidak boleh menyinggung SARA dan melanggar hak cipta.</li>
                         <li>Panitia {{ Site::get('site_name') }} berhak mendiskualifikasi peserta jika diketahui Hak Atas Kekayaan Intelektualnya diragukan, sedang dalam sengketa, mengambil karya orang lain, atau mendapatkan klaim dari pihak lain.</li>

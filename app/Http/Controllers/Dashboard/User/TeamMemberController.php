@@ -3,16 +3,15 @@
 namespace App\Http\Controllers\Dashboard\User;
 
 use App\Http\Controllers\Controller;
-use App\Awesome\Contracts\Controllers\User\UserContract;
+//use App\Awesome\Contracts\Controllers\User\UserContract;
 use Message;
 
-use App\User;
-use App\Role;
+use App\TeamMember;
 
-use App\Http\Requests\Users\CreateUserRequest;
-use App\Http\Requests\Users\UpdateUserRequest;
+use App\Http\Requests\TeamMembers\CreateTeamMemberRequest;
+use App\Http\Requests\TeamMembers\UpdateTeamMemberRequest;
 
-class UserController extends Controller implements UserContract
+class TeamMemberController extends Controller
 {
     /**
      * The loader implementation.
@@ -26,6 +25,8 @@ class UserController extends Controller implements UserContract
      */
     private $user;
 
+    private $positions;
+
     /**
      * Create a new controller instance.
      *
@@ -33,117 +34,172 @@ class UserController extends Controller implements UserContract
      */
     public function __construct(Message $message)
     {
-        $this->message = $message->setBase('messages.ctrl.user');
+        $this->message = $message->setBase('messages.ctrl.teamMember');
         $this->user = auth()->user();
+        $this->positions = [
+            ['name' => '-'],
+            ['name' => 'Ketua'],
+            ['name' => 'Anggota'],
+            ['name' => 'Official'],
+            ['name' => 'Kapten'],
+            ['name' => 'Pemain'],
+        ];
     }
 
     /**
-     * Display a listing of the user.
+     * Display a listing of the team member.
      *
-     * @param  App\User  $user
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $pageTitle = $this->message->shout('index.title');
-        $user = $this->user;
-
-        return view('dashboard.user.users.index', compact('pageTitle', 'user'));
+        return abort(404);
     }
 
     /**
-     * Show the form for creating a new user.
+     * Show the form for creating a new team member.
      *
-     * @param  App\Role  $role
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        return redirect('/dashboard');
+        $check = $this->atLeatHasBeenRegistered();
+        if ("" != $check) {
+            return redirect($check);
+        }
+        $pageTitle = $this->message->shout('create.title');
+        $positions = $this->positions;
+
+        return view('dashboard.user.members.create', compact('pageTitle', 'positions'));
     }
 
     /**
-     * Store a newly created user in storage.
+     * Store a newly created team member in storage.
      *
-     * @param  App\Http\Requests\Users\CreateUserRequest  $request
-     * @param  App\User  $user
+     * @param  App\Http\Requests\TeamMembers\CreateTeammemberRequest  $request
+     * @param  App\TeamMember  $teamMember
      * @return \Illuminate\Http\Response
      */
-    public function store(CreateUserRequest $request)
+    public function store(CreateTeamMemberRequest $request, TeamMember $teamMember)
     {
-        return redirect('/dashboard');
+        if (!$this->checkTeamMemberPositionConsistency($request)) {
+            alert()->error($this->message->shout('store.error'))->persistent("Close");
+            return redirect()->back();
+        }
+
+        $position = $request->get('position');
+        if ($position == "-") {
+            $position = "None";
+        }
+
+        $data = [
+            'nim' => $request->get('nim'),
+            'name' => $request->get('name'),
+            'email' => $request->get('email'),
+            'generation' => $request->get('generation'),
+            'phone' => $request->get('phone'),
+            'position' => $position,
+            'team_id' => $this->user->id,
+        ];
+
+        $teamMember->create($data);
+
+        alert()->success($this->message->shout('store.success'))->persistent("Close");
+
+        return redirect('/dashboard/users');
     }
 
     /**
-     * Display the specified user.
+     * Display the specified team member
      *
      * @param  App\User  $user
      * @return \Illuminate\Http\Response
      */
     public function show()
     {
-        return redirect('/dashboard');
+        return abort(404);
     }
 
     /**
-     * Show the form for editing the specified user.
+     * Show the form for editing the specified team member.
      *
-     * @param  App\User  $user
-     * @param  App\Role  $role
+     * @param  App\TeamMember  $teamMember
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user, $setting = false, $pageTitle = "Edit User")
+    public function edit($id, TeamMember $teamMember)
     {
-        if ($setting) {
-		    return view('dashboard.user.users.edit', compact('setting', 'pageTitle', 'user'));
+        $teamMember = $teamMember->findOrFail($id);
+
+        $pageTitle = $this->message->shout('edit.title');
+        $positions = $this->positions;
+        if ($teamMember->position == "None") {
+            $teamMember->position = "-";
         }
 
-        return redirect('/dashboard');
+        return view('dashboard.user.members.edit', compact('pageTitle', 'teamMember', 'positions'));
     }
 
     /**
-     * Update the specified user in storage.
+     * Update the specified team member in storage.
      *
-     * @param  App\Http\Requests\Users\UpdateUserRequest  $request
-     * @param  App\User  $user
+     * @param  App\Http\Requests\TeamMembers\UpdateTeamMemberRequest  $request
+     * @param  App\TeamMember  $teamMember
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateUserRequest $request, User $user)
+    public function update($id, UpdateTeamMemberRequest $request, TeamMember $teamMember)
     {
-        $user->update($request->all());
+        $teamMember = $teamMember->findOrFail($id);
 
-        if ($request->setting) {
-            alert()->success($this->message->shout('update.success.a'))->persistent("Close");
+        if (!$this->checkTeamMemberPositionConsistency($request)) {
+            alert()->error($this->message->shout('update.error'))->persistent("Close");
             return redirect()->back();
         }
-        alert()->success($this->message->shout('update.success.b'))->persistent("Close");
+
+        $teamMember->update($request->all());
+
+        alert()->success($this->message->shout('update.success'))->persistent("Close");
 
         return redirect('dashboard/users');
     }
 
     /**
-     * Remove the specified user from storage.
+     * Remove the specified team member from storage.
      *
-     * @param  App\User  $user
+     * @param  App\TeamMember  $teamMember
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy($id, TeamMember $teamMember)
     {
-        return redirect('/dashboard');
+        $teamMember = $teamMember->findOrFail($id);
+
+        alert()->success($this->message->shout('destroy.success'))->persistent("Close");
+
+        if ($this->user->category()->first() == null) {
+            return redirect('/dashboard');
+        }
+        return redirect('/dashboard/users');
     }
 
-    /**
-     * Show the form for editing the current user.
-     *
-     * @param  App\User  $user
-     * @param  App\Role  $role
-     * @return \Illuminate\Http\Response
-     */
-    public function setting()
+    public function checkTeamMemberPositionConsistency($request)
     {
-        $user = auth()->user();
-        $pageTitle = ucfirst($this->user->username) . " Account";
+        foreach ($this->positions as $position) {
+            if ($position['name'] == $request->get('position')) return true;
+        }
 
-        return $this->edit($user, true, $pageTitle);
+        return false;
     }
+
+    public function atLeatHasBeenRegistered()
+    {
+        $rs = $this->user->category()->first();
+
+        if ($rs == null) {
+            alert()->error($this->message->shout('alhbr.error'))->persistent("Close");
+
+            return "/dashboard/competitions/register";
+        }
+
+        return "";
+    }
+
 }

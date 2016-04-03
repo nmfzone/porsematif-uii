@@ -12,15 +12,15 @@
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-3">
-                            <i class="fa fa-comments fa-5x"></i>
+                            <i class="fa fa-user fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">10</div>
+                            <div class="huge">{{ UserMan::userRegisterTodayCount()  }}</div>
                             <div>Pendaftar hari ini!</div>
                         </div>
                     </div>
                 </div>
-                <a href="#">
+                <a href="{{ route('dashboard.protected.users.usersOnThatDay') }}">
                     <div class="panel-footer">
                         <span class="pull-left">View Details</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -37,12 +37,12 @@
                             <i class="fa fa-tasks fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">12</div>
+                            <div class="huge">{{ UserMan::verifiedUserCount()  }}</div>
                             <div>Registrasi Selesai!</div>
                         </div>
                     </div>
                 </div>
-                <a href="#">
+                <a href="{{ route('dashboard.protected.users.verified') }}">
                     <div class="panel-footer">
                         <span class="pull-left">View Details</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -59,12 +59,12 @@
                             <i class="fa fa-shopping-cart fa-4x"></i>
                         </div>
                         <div class="col-xs-10 text-right">
-                            <div class="huge">124</div>
+                            <div class="huge">{{ UserMan::notVerifiedUserCount() }}</div>
                             <div>Registrasi Belum Selesai!</div>
                         </div>
                     </div>
                 </div>
-                <a href="#">
+                <a href="{{ route('dashboard.protected.users.notVerified') }}">
                     <div class="panel-footer">
                         <span class="pull-left">View Details</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

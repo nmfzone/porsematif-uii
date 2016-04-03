@@ -18,7 +18,7 @@ class Image extends Model
      *
      * @var array
      */
-    protected $fillable = ['slug', 'status'];
+    protected $fillable = ['name', 'url', 'slug', 'type', 'status'];
 
     /**
      * Get the user that owns the image.
@@ -28,6 +28,16 @@ class Image extends Model
     public function user()
     {
         return $this->belongsTo('App\User');
+    }
+
+    /**
+     * Get the user_categories that owns the image.
+     *
+     * @return App\UserCategory
+     */
+    public function user_category()
+    {
+        return $this->belongsTo('App\UserCategory');
     }
 
 }

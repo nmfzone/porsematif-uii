@@ -23,20 +23,6 @@
                                 </div>
                             </div>
 
-                            <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                <label class="col-md-3 control-label">Nama Tim</label>
-
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" name="name" value="{{ old('name') }}">
-
-                                    @if ($errors->has('name'))
-                                        <span class="help-block">
-                                            <strong>{{ $errors->first('name') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
-                            </div>
-
                             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                                 <label class="col-md-3 control-label">Email</label>
 
@@ -74,24 +60,6 @@
                                     @if ($errors->has('password_confirmation'))
                                         <span class="help-block">
                                             <strong>{{ $errors->first('password_confirmation') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
-                            </div>
-
-                            <div class="form-group{{ $errors->has('competition') ? ' has-error' : '' }}">
-                                <label class="col-md-3 control-label">Jenis Lomba</label>
-
-                                <div class="col-md-6">
-                                    <select class="form-control" name="competition">
-                                    @foreach($competitions as $competition)
-                                        <option value="{{ $competition->id }}">{{ $competition->name }}</option>
-                                    @endforeach
-                                    </select>
-
-                                    @if ($errors->has('competition'))
-                                        <span class="help-block">
-                                            <strong>{{ $errors->first('competition') }}</strong>
                                         </span>
                                     @endif
                                 </div>

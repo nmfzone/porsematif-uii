@@ -12,9 +12,19 @@
     <input type="email" class="form-control" name="email" value="{{ old('email') }}">
 @endsection
 
-@section('input_role')
-    @foreach($roles as $role)
-        <option value="{{ $role->id }}">{{ $role->name }}</option>
+@section('input_institution_name')
+    <input type="text" class="form-control" name="institution_name" value="{{ old('institution_name') }}">
+@endsection
+
+@section('input_institution_address')
+    <input type="text" class="form-control" name="institution_address" value="{{ old('institution_address') }}">
+@endsection
+
+@section('input_category')
+    @foreach($competitions as $competition)
+        <div class="checkbox">
+            <label><input type="checkbox" name="competition[]" value="{{ $competition->id }}">{{ $competition->name }}</label>
+        </div>
     @endforeach
 @endsection
 

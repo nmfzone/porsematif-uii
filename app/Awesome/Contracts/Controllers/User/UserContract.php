@@ -3,6 +3,7 @@
 namespace App\Awesome\Contracts\Controllers\User;
 
 use App\User;
+use App\TeamMember;
 
 use App\Http\Requests\Users\CreateUserRequest;
 use App\Http\Requests\Users\UpdateUserRequest;
@@ -15,7 +16,7 @@ interface UserContract
      * @param  App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function index();
+    public function index(TeamMember $teamMember);
 
     /**
      * Show the form for creating a new user.
@@ -49,7 +50,7 @@ interface UserContract
      * @param  App\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user, $setting = false, $pageTitle = "Edit User");
+    public function edit(User $user, $setting = false, $pageTitle);
 
     /**
      * Update the specified user in storage.

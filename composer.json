@@ -10,7 +10,10 @@
         "intervention/image": "2.3.*",
         "laravelcollective/html": "5.1.*",
         "uxweb/sweet-alert": "~1.1",
-        "anhskohbo/no-captcha": "2.*"
+        "anhskohbo/no-captcha": "2.*",
+        "yajra/laravel-datatables-oracle": "~6.0",
+        "predis/predis": "~1.0",
+        "sukohi/surpass": "2.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

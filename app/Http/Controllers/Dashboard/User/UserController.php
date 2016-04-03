@@ -7,7 +7,8 @@ use App\Awesome\Contracts\Controllers\User\UserContract;
 use Message;
 
 use App\User;
-use App\Role;
+use App\TeamMember;
+use App\UserCategory;
 
 use App\Http\Requests\Users\CreateUserRequest;
 use App\Http\Requests\Users\UpdateUserRequest;
@@ -43,12 +44,20 @@ class UserController extends Controller implements UserContract
      * @param  App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(TeamMember $teamMember)
     {
+        $check = $this->atLeatHasBeenRegistered();
+        if ("" != $check) {
+            return redirect($check);
+        }
+
         $pageTitle = $this->message->shout('index.title');
         $user = $this->user;
+        $members = $teamMember->get();
+        $bukti_pembayaran = $this->user->image()->where('type', 'Bukti Pembayaran')->get();
+        $surat_pernyataan = $this->user->image()->where('type', 'Surat Pernyataan')->get();
 
-        return view('dashboard.user.users.index', compact('pageTitle', 'user'));
+        return view('dashboard.user.users.index', compact('pageTitle', 'user', 'members', 'bukti_pembayaran', 'surat_pernyataan'));
     }
 
     /**
@@ -59,7 +68,7 @@ class UserController extends Controller implements UserContract
      */
     public function create()
     {
-        return redirect('/dashboard');
+        return abort(404);
     }
 
     /**
@@ -71,7 +80,7 @@ class UserController extends Controller implements UserContract
      */
     public function store(CreateUserRequest $request)
     {
-        return redirect('/dashboard');
+        return abort(404);
     }
 
     /**
@@ -82,7 +91,7 @@ class UserController extends Controller implements UserContract
      */
     public function show()
     {
-        return redirect('/dashboard');
+        return abort(404);
     }
 
     /**
@@ -92,13 +101,13 @@ class UserController extends Controller implements UserContract
      * @param  App\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user, $setting = false, $pageTitle = "Edit User")
+    public function edit(User $user, $setting = false, $pageTitle)
     {
         if ($setting) {
-		    return view('dashboard.user.users.edit', compact('setting', 'pageTitle', 'user'));
+            return view('dashboard.user.users.edit', compact('setting', 'pageTitle', 'user'));
         }
 
-        return redirect('/dashboard');
+        return abort(404);
     }
 
     /**
@@ -112,11 +121,7 @@ class UserController extends Controller implements UserContract
     {
         $user->update($request->all());
 
-        if ($request->setting) {
-            alert()->success($this->message->shout('update.success.a'))->persistent("Close");
-            return redirect()->back();
-        }
-        alert()->success($this->message->shout('update.success.b'))->persistent("Close");
+        alert()->success($this->message->shout('update.success'))->persistent("Close");
 
         return redirect('dashboard/users');
     }
@@ -129,7 +134,7 @@ class UserController extends Controller implements UserContract
      */
     public function destroy(User $user)
     {
-        return redirect('/dashboard');
+        return abort(404);
     }
 
     /**
@@ -145,5 +150,18 @@ class UserController extends Controller implements UserContract
         $pageTitle = ucfirst($this->user->username) . " Account";
 
         return $this->edit($user, true, $pageTitle);
+    }
+
+    public function atLeatHasBeenRegistered()
+    {
+        $rs = $this->user->category()->first();
+
+        if ($rs == null) {
+            alert()->error($this->message->shout('alhbr.error'))->persistent("Close");
+
+            return "/dashboard/competitions/register";
+        }
+
+        return "";
     }
 }

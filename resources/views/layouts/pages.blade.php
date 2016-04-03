@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>{{ Site::get('site_name') }}</title>
+        <title>{{ $pageTitle ? $pageTitle . " | " : $pageTitle }} {{ Site::get('site_name') }}</title>
 
         <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
         <link href="{{ asset('assets/css/fonts.min.css') }}" rel="stylesheet" type="text/css">
@@ -41,7 +41,13 @@
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
+                            <a href="{{ url('/competitions/internal') }}">Internal</a>
+                        </li>
+                        <li>
                             <a href="{{ url('/#events') }}">Events</a>
+                        </li>
+                        <li>
+                            <a href="{{ url('/#competitions') }}">Competitions</a>
                         </li>
                         <li>
                             <a href="{{ url('#sponsors') }}">Sponsors</a>
@@ -74,9 +80,7 @@
         </nav>
         <div class="wrapper">
             <div class="parallax filter-gradient blue" data-color="blue" id="home">
-                <!-- <div class="parallax&#45;background"> -->
-                <!--     <img class="parallax&#45;background&#45;image" src="http://localhost:8000/assets/images/header.jpg"> -->
-                <!-- </div> -->
+
             </div>
         </div>
         @yield('content')
@@ -105,9 +109,9 @@
                             <i class="fa fa-mobile"></i>
                         </div>
                         <div class="content">
-                             <p>+6281871675188</p>
-                            <p>hello@porsematif.com</p>
-                            <p>Line : porse</p>
+                             <p>+6281328733696</p>
+                            <p>nabilftd@gmail.com</p>
+                            <p>Line : nabilftd</p>
                         </div>
                     </div>
                      <div class="col-md-4 t-box">
@@ -131,12 +135,8 @@
                     <h4 class="header-text">Our Sponsors</h4>
                     <div class="logos">
                         <ul class="list-unstyled">
-                            <li ><img src="{{ asset('assets/img/logos/adobe.png') }}"/></li>
-                            <li ><img src="{{ asset('assets/img/logos/zendesk.png') }}"/></li>
-                            <li ><img src="{{ asset('assets/img/logos/ebay.png') }}"/></i>
-                            <li ><img src="{{ asset('assets/img/logos/evernote.png') }}"/></li>
-                            <li ><img src="{{ asset('assets/img/logos/airbnb.png') }}"/></li>
-                            <li ><img src="{{ asset('assets/img/logos/zappos.png') }}"/></li>
+                            <li ><img src="{{ asset('assets/images/starcomp.png') }}" width="200px" /></li>
+                            <li ><img src="{{ asset('assets/images/mangrove.png') }}" width="150px" /></li>
                         </ul>
                     </div>
                 </div>

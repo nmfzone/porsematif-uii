@@ -50,5 +50,4 @@ class Message extends Model
         return $this->belongsToMany('App\User', 'message_details', 'receiver_id', 'message_id');
     }
 
-
 }

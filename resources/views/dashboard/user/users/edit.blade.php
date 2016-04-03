@@ -14,7 +14,7 @@
         <form class="form-horizontal" role="form" method="POST" action="{{ url('/dashboard/users/' . $user->id) }}">
 
             {{ method_field('PUT') }}
-            @include('dashboard.user.users._user_form_edit')
+            @include('dashboard.user.users.partials._user_edit_form')
 
         </form>
     </div>

@@ -17,11 +17,11 @@ class SiteOptionsTableSeeder extends Seeder
         $options = [
             [
                 "name"  => "favicon",
-                "value" => "assets/images/hmtf-uii-logo.jpeg"
+                "value" => "assets/images/favicon.png"
             ],
             [
                 "name"  => "site_name",
-                "value" => env('SITE_NAME', 'Awesome')
+                "value" => env('APP_NAME', 'Awesome')
             ],
             [
                 "name"  => "site_logo",
@@ -29,7 +29,7 @@ class SiteOptionsTableSeeder extends Seeder
             ],
             [
                 "name"  => "site_url",
-                "value" => env('SITE_URL', 'http://localhost:8000')
+                "value" => env('APP_URL', 'http://localhost:8000')
             ],
         ];
 

@@ -32,8 +32,8 @@ return [
     'date'                 => 'Isian kolom :attribute bukan tanggal yang valid.',
     'date_format'          => 'Isian kolom :attribute harus sesuai format (:format).',
     'different'            => 'Isian kolom :attribute dan :other harus berbeda.',
-    'digits'               => 'Isian kolom :attribute hanya boleh berisi angka :digits.',
-    'digits_between'       => 'Isian kolom :attribute hanya boleh berisi angka antara :min dan :max.',
+    'digits'               => 'Isian kolom :attribute harus berisi angka dengan panjang :digits digit.',
+    'digits_between'       => 'Isian kolom :attribute harus berisi angka dengan panjang antara :min sampai :max digit.',
     'email'                => 'Isian kolom :attribute harus berupa alamat surel yang valid.',
     'exists'               => 'Isian kolom :attribute yang dipilih tidak valid.',
     'filled'               => 'Kolom :attribute wajib diisi.',
@@ -106,9 +106,16 @@ return [
     */
 
     'attributes' => [
-        'name'  => 'nama',
-        'date'  => 'tanggal',
-        'image' => 'gambar',
+        'name'              => 'nama',
+        'date'              => 'tanggal',
+        'image'             => 'gambar',
+        'generation'        => 'angkatan',
+        'position'          => 'posisi',
+        'team_name'         => 'nama tim',
+        'surat_pernyataan'  => 'surat pernyataan',
+        'pembayaran'        => 'bukti pembayaran',
+        'galleries'         => 'foto',
+        'years'             => 'tahun',
     ],
 
 ];

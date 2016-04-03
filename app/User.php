@@ -73,13 +73,23 @@ class User extends Model implements AuthenticatableContract,
     }
 
     /**
-     * Get the categories record associated with the user.
+     * Get the categories record associated with the team (user).
      *
      * @return App\Category
      */
     public function category()
     {
-        return $this->belongsTo('App\Category');
+        return $this->belongsToMany('App\Category', 'user_categories', 'user_id', 'category_id');
+    }
+
+    /**
+     * Get the user_category that owns the team (user).
+     *
+     * @return App\UserCategory
+     */
+    public function user_category()
+    {
+        return $this->hasMany('App\UserCategory');
     }
 
     /**

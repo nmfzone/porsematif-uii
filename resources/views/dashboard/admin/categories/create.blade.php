@@ -11,9 +11,9 @@
 @section('content')
 <div class="row">
     <div class="col-md-8 col-md-offset-2">
-        <form class="form-horizontal" role="form" method="POST" action="{{ url('/dashboard/spareparts') }}">
+        <form class="form-horizontal" role="form" method="POST" action="{{ url('/dashboard/protected/competitions') }}">
 
-            @include('dashboard.admin.spareparts.partials._sparepart_create_form')
+            @include('dashboard.admin.categories.partials._category_create_form')
 
         </form>
     </div>

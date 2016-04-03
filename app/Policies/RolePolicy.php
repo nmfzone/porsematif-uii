@@ -2,50 +2,68 @@
 
 namespace App\Policies;
 
-use Illuminate\Auth\Access\HandlesAuthorization;
-
 use App\User;
 use App\Role;
 
 class RolePolicy
 {
-    use HandlesAuthorization;
-
     /**
-     * Create a new policy instance.
+     * Determine if user can make create category request.
      *
-     * @return void
+     * @param  App\User  $user
+     * @param  App\Role  $role
+     * @return bool
      */
-    // public function __construct()
-    // {
-    //     //
-    // }
-
-    public function before($user, $ability)
+    public function createCategory(User $user, Role $role)
     {
-        if ($user->hasRole('admin')) {
-            return true;
-        }
-
-        return false;
+        return $role->name == "Admin";
     }
 
     /**
-     * Determine if the given post can be updated by the user.
+     * Determine if user can make update category request.
      *
      * @param  App\User  $user
-     * @param  array  $roles
+     * @param  App\Role  $role
      * @return bool
      */
-    public function access(User $user, $roles = [])
+    public function updateCategory(User $user, Role $role)
     {
-        foreach ($roles as $role) {
-            if ($user->hasRole($role)) {
-                return true;
-            }
-        }
+        return $role->name == "Admin";
+    }
 
-        return false;
+    /**
+     * Determine if user can make competition registration request.
+     *
+     * @param  App\User  $user
+     * @param  App\Role  $role
+     * @return bool
+     */
+    public function registerCompetition(User $user, Role $role)
+    {
+        return $role->name == "User";
+    }
+
+    /**
+     * Determine if user can make add competition requirements request.
+     *
+     * @param  App\User  $user
+     * @param  App\Role  $role
+     * @return bool
+     */
+    public function addCompetitionRequirements(User $user, Role $role)
+    {
+        return $role->name == "User";
+    }
+
+    /**
+     * Determine if user can make gallery uploads request.
+     *
+     * @param  App\User  $user
+     * @return bool
+     **/
+    public function galleryUploads(User $user, Role $role)
+    {
+        return $role->name == "Admin";
     }
 
 }

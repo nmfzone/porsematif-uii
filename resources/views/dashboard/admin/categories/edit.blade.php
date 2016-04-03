@@ -9,12 +9,13 @@
 @endsection
 
 @section('content')
+
 <div class="row">
     <div class="col-md-8 col-md-offset-2">
-        <form class="form-horizontal" role="form" method="POST" action="{{ url('/dashboard/spareparts/' . $sparepart->id) }}">
+        <form class="form-horizontal" role="form" method="POST" action="{{ url('/dashboard/protected/competitions/' . $category->id) }}">
 
             {{ method_field('PUT') }}
-            @include('dashboard.admin.spareparts.partials._sparepart_edit_form')
+            @include('dashboard.admin.categories.partials._category_edit_form')
 
         </form>
     </div>

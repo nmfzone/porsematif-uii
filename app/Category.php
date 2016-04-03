@@ -25,7 +25,7 @@ class Category extends Model
      *
      * @var array
      */
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'type'];
 
     /**
      * Get the user that owns the category.
@@ -34,7 +34,17 @@ class Category extends Model
      */
     public function user()
     {
-        return $this->hasMany('App\User');
+        return $this->belongsToMany('App\User', 'user_categories', 'category_id', 'user_id');
+    }
+
+    /**
+     * Get the user_category that owns the category.
+     *
+     * @return App\UserCategory
+     */
+    public function user_category()
+    {
+        return $this->hasMany('App\UserCategory');
     }
 
 }

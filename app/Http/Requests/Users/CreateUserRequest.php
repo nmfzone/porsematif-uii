@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Users;
 
+use Gate;
 use App\Http\Requests\Request;
 
 class CreateUserRequest extends Request
@@ -13,7 +14,9 @@ class CreateUserRequest extends Request
      */
     public function authorize()
     {
-        return false;
+        $user = auth()->user();
+
+        return Gate::allows('create-users-man', $user);
     }
 
     /**
@@ -24,10 +27,13 @@ class CreateUserRequest extends Request
     public function rules()
     {
         return [
-            'username' => 'required|max:255|alpha_dash|unique:users',
-            'name'     => 'required|max:255',
-            'email'    => 'email|max:255|unique:users',
-            'password' => 'required|confirmed|min:6',
+            'username'              => 'required|max:255|alpha_dash|unique:users',
+            'name'                  => 'max:255|unique:users',
+            'email'                 => 'required|email|max:255|unique:users',
+            'password'              => 'required|confirmed|min:6',
+            'institution_name'      => 'required|max:255',
+            'institution_address'   => 'required|max:255',
+            'competition'           => 'required',
         ];
     }
 

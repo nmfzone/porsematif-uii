@@ -19,7 +19,11 @@ class CreateImagesTable extends Migration
             $table->string('slug')->nullable();
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->integer('user_category_id')->unsigned()->nullable();
+            $table->foreign('user_category_id')->references('id')->on('user_categories')->onDelete('cascade');
             $table->string('type')->default('None');
+            $table->text('note')->nullable();
+            $table->boolean('wMoreH')->default(0);
             $table->boolean('status')->default(0);
             $table->timestamps();
         });

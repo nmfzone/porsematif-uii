@@ -68,15 +68,49 @@
     </div>
 </div>
 
-<div class="form-group">
-    <label class="col-md-4 control-label">Hak Akses</label>
+@if(!$setting)
+<div class="form-group{{ $errors->has('institution_name') ? ' has-error' : '' }}">
+    <label class="col-md-4 control-label">Nama Perguruan Tinggi</label>
 
     <div class="col-md-6">
-        <select class="form-control" name="role_id">
-            @yield('input_role')
-        </select>
+        @yield('input_institution_name')
+
+        @if ($errors->has('institution_name'))
+            <span class="help-block">
+                <strong>{{ $errors->first('institution_name') }}</strong>
+            </span>
+        @endif
     </div>
 </div>
+
+<div class="form-group{{ $errors->has('institution_address') ? ' has-error' : '' }}">
+    <label class="col-md-4 control-label">Alamat Perguruan Tinggi</label>
+
+    <div class="col-md-6">
+        @yield('input_institution_address')
+
+        @if ($errors->has('institution_address'))
+            <span class="help-block">
+                <strong>{{ $errors->first('institution_address') }}</strong>
+            </span>
+        @endif
+    </div>
+</div>
+
+<div class="form-group{{ $errors->has('competition') ? ' has-error' : '' }}">
+    <label class="col-md-4 control-label">Kompetisi</label>
+
+    <div class="col-md-6">
+        @yield('input_category')
+
+        @if ($errors->has('competition'))
+            <span class="help-block">
+                <strong>{{ $errors->first('competition') }}</strong>
+            </span>
+        @endif
+    </div>
+</div>
+@endif
 
 {!! csrf_field() !!}
 

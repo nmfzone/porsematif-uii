@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Categories;
 
+use Gate;
 use App\Http\Requests\Request;
 
 class CreateCategoryRequest extends Request
@@ -13,7 +14,9 @@ class CreateCategoryRequest extends Request
      */
     public function authorize()
     {
-        return false;
+        $role = auth()->user()->role;
+
+        return Gate::allows('create-category', $role);
     }
 
     /**
@@ -24,7 +27,8 @@ class CreateCategoryRequest extends Request
     public function rules()
     {
         return [
-            'name' => 'required|max:255|unique:categories',
+            'name'  => 'required|max:255|unique:categories',
+            'type'  => 'required'
         ];
     }
 

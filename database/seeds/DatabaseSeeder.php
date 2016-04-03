@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder
         $this->call(RoleTableSeeder::class);
         $this->call(UserTableSeeder::class);
         $this->call(SiteOptionsTableSeeder::class);
+        $this->call(TeamMemberTableSeeder::class);
+        $this->call(ImageTableSeeder::class);
 
         Model::reguard();
     }
