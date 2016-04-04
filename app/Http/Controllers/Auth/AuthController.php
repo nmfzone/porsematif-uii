@@ -146,7 +146,7 @@ class AuthController extends Controller
         $newUser->save();
 
         $link = url("/auth/emails/verify/" . $code);
-        $this->dispatch(new SendVerificationEmail($newUser->id, $link));
+        $this->dispatch(new SendVerificationEmail($newUser, $link));
 
         alert()->success($this->message->shout('registration.success'))->persistent("Close");
 
