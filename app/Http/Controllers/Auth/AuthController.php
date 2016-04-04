@@ -104,15 +104,17 @@ class AuthController extends Controller
         $user = User::where('username', $credentials['username'])
             ->first();
 
-        if ($user != null) {
-            if (password_verify($credentials['password'], $user->password) && $user->status == 0) {
-                return redirect($this->loginPath())
-                    ->withInput($request->only($this->loginUsername(), 'remember'))
-                    ->withErrors([
-                        $this->loginUsername() => "Email anda belum di konfirmasi. Silahkan klik tautan yang dikirimkan ke email anda.",
-                    ]);
-            }
-        }
+        /*
+         * if ($user != null) {
+         *     if (password_verify($credentials['password'], $user->password) && $user->status == 0) {
+         *         return redirect($this->loginPath())
+         *             ->withInput($request->only($this->loginUsername(), 'remember'))
+         *             ->withErrors([
+         *                 $this->loginUsername() => "Email anda belum di konfirmasi. Silahkan klik tautan yang dikirimkan ke email anda.",
+         *             ]);
+         *     }
+         * }
+         */
 
         if (Auth::attempt($credentials, $request->has('remember'))) {
             return $this->handleUserWasAuthenticated($request, $throttles);

@@ -67,7 +67,8 @@ return [
         ],
         'auth' => [
             'registration' => [
-                'success' => 'Selamat bergabung di Porsematif 2016. Silahkan klik tautan yang dikirimkan ke email anda.',
+                // 'success' => 'Selamat bergabung di Porsematif 2016. Silahkan klik tautan yang dikirimkan ke email anda.',
+                'success' => 'Selamat bergabung di Porsematif 2016.',
             ],
             'email_verify' => [
                 'success' => 'Selamat email anda telah terverifikasi.',
