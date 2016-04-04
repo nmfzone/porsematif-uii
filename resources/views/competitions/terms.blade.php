@@ -22,7 +22,7 @@
     <li>Dilarang memakai dan menggunakan minuman keras dan NAPZA selama kegiatan PORSEMATIF 2016 berlangsung.</li>
 </ol><h3>Bentuk Sanksi</h3>
 <b>Ringan</b> : Teguran dan peringatan sebanyak 2 kali oleh divisi keamanan. Jika melanggar aturan 2 dan 3.
-<b>Sedang</b> : Apabila sanksi ringan telah diupayakan tetapi pelanggaran tetap dijalankan      atau melanggar aturan nomor 5 dan 6 maka akan    dikeluarkan dari area kegiatan PORSEMATIF 2016. Dilakukan penyitaan barang-barang terlarang oleh   divisi keamanan.
+<b>Sedang</b> : Apabila sanksi ringan telah diupayakan tetapi pelanggaran tetap dijalankan atau melanggar aturan nomor 5 dan 6 maka akan dikeluarkan dari area kegiatan PORSEMATIF 2016. Dilakukan penyitaan barang-barang terlarang oleh divisi keamanan.
 <b>Berat</b> : Di laporkan ke pihak berwajib (polisi) jika melanggar peraturan nomor 3 atau mengancam peserta lain dengan tindak kekerasan.
                     </div>
                 </div>
