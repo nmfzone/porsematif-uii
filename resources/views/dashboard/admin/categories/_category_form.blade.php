@@ -12,6 +12,20 @@
     </div>
 </div>
 
+<div class="form-group{{ $errors->has('price') ? ' has-error' : '' }}">
+    <label class="col-md-4 control-label">Biaya</label>
+
+    <div class="col-md-6">
+        @yield('input_price')
+
+        @if ($errors->has('price'))
+            <span class="help-block">
+                <strong>{{ $errors->first('price') }}</strong>
+            </span>
+        @endif
+    </div>
+</div>
+
 <div class="form-group">
     <label class="col-md-4 control-label">Tipe Kompetisi</label>
 

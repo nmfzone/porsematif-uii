@@ -4,6 +4,10 @@
     <input type="text" class="form-control" name="name" value="{!! $category->name !!}">
 @endsection
 
+@section('input_price')
+    <input type="text" class="form-control" name="price" value="{!! $category->price !!}">
+@endsection
+
 @section('type')
     @if($category->type == "External")
         <option value="External" selected>Kompetisi External</option>
