@@ -150,7 +150,7 @@ class AuthController extends Controller
 
         alert()->success($this->message->shout('registration.success'))->persistent("Close");
 
-        return redirect()->back();
+        return redirect('auth/login');
     }
 
     public function verifyEmailActivationCode(User $user, $activation_key)
