@@ -20,6 +20,15 @@ DOTA 2 COMPETITION merupakan rangkaian acara PORSEMATIF 2016, kompetisi ini ditu
 <h3>Syarat Peserta</h3>
 <ol>
     <li>Peserta DOTA 2 COMPETITION adalah satu tim yang terdiri dari maksimal 5 orang</li>
+    <li>Terdiri dari 16 Team :
+    <ul>
+    <li>3 Team untuk 2015</li>
+    <li>3 Team untuk 2014</li>
+    <li>3 Team untuk 2013</li>
+    <li>3 Team untuk 2012</li>
+    <li>2 Team untuk 2011</li>
+    <li>2 Team untuk Alumni</li>
+    </ul></li>
     <li>Wajib mengumpulkan fotocopy KTM kepada panitia.</li>
     <li>Peserta merupakan mahasiswa teknik inforamtika FTI UII yang berstatus aktif</li>
     <li>Melakukan pendaftaran account tim <a href="{{ url('auth/register') }}" target="_blank">disini</a>, kemudian mengisi identitas masing-masing anggota di dalam dashboard sistem atau mendaftar pada stand di kantor HMTF FTI UII</li>
