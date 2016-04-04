@@ -171,9 +171,9 @@
                                 <i class="fa fa-mobile"></i>
                             </div>
                             <div class="content">
-                                <p>+6281871675188</p>
-                                <p>hello@porsematif.com</p>
-                                <p>Line : porse</p>
+                                <p>+6282134300518</p>
+                                <p>tachmidz96@gmail.com</p>
+                                <p>Line : tahmid1412</p>
                             </div>
                         </div>
                         <div class="col-md-4 t-box">
@@ -197,9 +197,9 @@
                                 <i class="fa fa-mobile"></i>
                             </div>
                             <div class="content">
-                                 <p>+6281871675188</p>
-                                <p>hello@porsematif.com</p>
-                                <p>Line : porse</p>
+                                 <p>+6285878770006</p>
+                                <p>-</p>
+                                <p>Line : -</p>
                             </div>
                         </div>
                     </div>
