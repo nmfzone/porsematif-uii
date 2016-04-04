@@ -18,7 +18,7 @@ class UserManagementImpl implements UserManagementContract
      */
     public static function userRegisterTodayCount()
     {
-        return User::where('created_at', '>=', Carbon::today())->count();
+        return User::where('created_at', '>=', Carbon::today())->with('user')->with('category')->count();
     }
 
     /**
