@@ -122,7 +122,7 @@ class UserManagementController extends Controller
      */
     public function getVerifiedUsers()
     {
-        return Datatables::of(UserCategory::where('verified', 0)->with('user')->with('category'))
+        return Datatables::of(UserCategory::where('verified', 1)->with('user')->with('category'))
             ->addColumn('action', function ($user_category) {
                 $action = '<a href="'. url("dashboard/protected/users/" . $user_category->user->id . "/edit") .'" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-edit"></i> Edit</a>';
                 $action .= '<a href="'. url("dashboard/protected/users/" . $user_category->user->id) .'" class="btn btn-xs btn-success show-this"><i class="glyphicon glyphicon-zoom-in"></i> Lihat</a>';
