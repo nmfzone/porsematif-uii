@@ -140,9 +140,8 @@ class AuthController extends Controller
     {
         $code = str_random(30);
 
-        $newUser = $user->newInstance($request->except(['competition', 'g-recaptcha-response', 'accept_terms']));
+        $newUser = $user->newInstance($request->except(['g-recaptcha-response', 'accept_terms']));
         $newUser->role_id = 2;
-        $newUser->category_id = $request->get('competition');
         $newUser->activation_key = $code;
         $newUser->save();
 
