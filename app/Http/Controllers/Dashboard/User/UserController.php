@@ -53,7 +53,7 @@ class UserController extends Controller implements UserContract
 
         $pageTitle = $this->message->shout('index.title');
         $user = $this->user;
-        $members = $this->user->member()->get();
+        $members = $this->user->member()->orderBy('position', 'desc')->get();
         $bukti_pembayaran = $this->user->image()->where('type', 'Bukti Pembayaran')->get();
         $surat_pernyataan = $this->user->image()->where('type', 'Surat Pernyataan')->get();
 
