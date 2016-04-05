@@ -51,7 +51,7 @@ Dalam Porsematif tahun 2016 ini terdapat tempat untuk menguji mahasiswa Teknik I
 <h3>Alur Pendaftaran</h3>
 <ol>
     <li>Melakukan pendaftaran account tim <a href="{{ url('auth/register') }}" target="_blank">disini</a>, kemudian mengisi identitas masing-masing anggota di dalam dashboard sistem</li>
-    <li>Setelah selesai melakukan registrasi, peserta melakukan pembayaran sebesar <b>Rp. 35.000,00</b> ke rekening <b>Mandiri 1370012005217 atas nama DHIYA MAHDI ASRINY</b></li>
+    <li>Setelah selesai melakukan registrasi, peserta melakukan pembayaran sebesar <b>Rp. 25.000,00</b> ke rekening <b>Mandiri 1370012005217 atas nama DHIYA MAHDI ASRINY</b></li>
     <li>Setelah selesai melakukan upload bukti pembayaran, peserta mengkonfirmasi di nomor 085600095453 (siwi) bahwa kelompok tersebut telah melakukan upload bukti pembayaran</li>
     <li>Peserta akan mendapat balasan email dari panitia</li>
     <li>Peserta juga dapat mendaftar langsung kepada panitia dengan mendatangi kantor lembaga HMTF dengan membawa syarat-syarat yang diperlukan kemudian mengisi formulir dan membayar uang pendaftaran ke panitia.</li>

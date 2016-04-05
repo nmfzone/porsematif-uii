@@ -80,7 +80,7 @@ class CategoryTableSeeder extends Seeder
 
         Category::create([
             'name'  => 'Dota 2',
-            'price' => 70000,
+            'price' => 50000,
             'type'  => $type_2
         ]);
 
@@ -92,7 +92,7 @@ class CategoryTableSeeder extends Seeder
 
         Category::create([
             'name'  => 'Counter Strike',
-            'price' => 70000,
+            'price' => 50000,
             'type'  => $type_2
         ]);
 
@@ -104,7 +104,7 @@ class CategoryTableSeeder extends Seeder
 
         Category::create([
             'name'  => 'Desain Logo',
-            'price' => 25000,
+            'price' => 15000,
             'type'  => $type_2
         ]);
 
@@ -116,7 +116,7 @@ class CategoryTableSeeder extends Seeder
 
         Category::create([
             'name'  => 'Insta Video',
-            'price' => 35000,
+            'price' => 25000,
             'type'  => $type_2
         ]);
 

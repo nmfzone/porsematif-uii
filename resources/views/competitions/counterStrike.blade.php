@@ -29,7 +29,7 @@ COUNTER STRIKE merupakan rangkaian acara PORSEMATIF 2016, kompetisi ini ditunjuk
     <li>2 Tim untuk Alumni</li>
     </ol></li>
     <li>Melakukan pendaftaran account tim <a href="{{ url('auth/register') }}" target="_blank">disini</a>, kemudian mengisi identitas masing-masing anggota di dalam dashboard sistem atau mendaftar pada stand di kantor HMTF FTI UII</li>
-    <li>Peserta harus melunasi biaya pendaftaran sebesar Rp 70.000,00.</li>
+    <li>Peserta harus melunasi biaya pendaftaran sebesar Rp 50.000,00.</li>
     <li>Ketentuan dan persyaratan yang belum tercantum akan ditambahkan kemudian hari bila diperlukan.</li>
 </ol>
 
@@ -99,7 +99,7 @@ COUNTER STRIKE merupakan rangkaian acara PORSEMATIF 2016, kompetisi ini ditunjuk
 <ol>
     <li>Melakukan pendaftaran account tim <a href="{{ url('auth/register') }}" target="_blank">disini</a>, kemudian mengisi identitas masing-masing anggota di dalam dashboard sistem</li>
     <li>Peserta mengisi formulir registrasi yang tersedia dengan data yang sebenarnya-benarnya.</li>
-    <li>Setelah selesai melakukan registrasi, peserta melakukan pembayaran sebesar <b>Rp. 70.000,00</b> rekening <b>Bank Mandiri 1370012005217 atas nama Dhiya Mahdi Asriny</b></li>
+    <li>Setelah selesai melakukan registrasi, peserta melakukan pembayaran sebesar <b>Rp. 50.000,00</b> rekening <b>Bank Mandiri 1370012005217 atas nama Dhiya Mahdi Asriny</b></li>
     <li>Peserta melakukan upload bukti pembayaran ke dalam dashboard sistem (bagi yang melakukan pembayaran melalui transfer bank).</li>
     <li>Setelah selesai melakukan upload bukti pembayaran, peserta mengkonfirmasi di nomor 085600095453 (siwi) bahwa kelompok tersebut telah melakukan upload bukti pembayaran</li>
     <li>Peserta akan mendapat balasan email dari panitia</li>
