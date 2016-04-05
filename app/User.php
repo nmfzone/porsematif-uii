@@ -99,7 +99,7 @@ class User extends Model implements AuthenticatableContract,
      */
     public function member()
     {
-        return $this->hasMany('App\TeamMember');
+        return $this->hasMany('App\TeamMember', 'team_id');
     }
 
     /**

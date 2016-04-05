@@ -126,9 +126,9 @@ class TeamMemberController extends Controller
      * @param  App\TeamMember  $teamMember
      * @return \Illuminate\Http\Response
      */
-    public function edit($id, TeamMember $teamMember)
+    public function edit($id)
     {
-        $teamMember = $teamMember->findOrFail($id);
+        $teamMember = $this->user->member()->findOrFail($id);
 
         $pageTitle = $this->message->shout('edit.title');
         $positions = $this->positions;
@@ -146,9 +146,9 @@ class TeamMemberController extends Controller
      * @param  App\TeamMember  $teamMember
      * @return \Illuminate\Http\Response
      */
-    public function update($id, UpdateTeamMemberRequest $request, TeamMember $teamMember)
+    public function update($id, UpdateTeamMemberRequest $request)
     {
-        $teamMember = $teamMember->findOrFail($id);
+        $teamMember = $this->user->member()->findOrFail($id);
 
         if (!$this->checkTeamMemberPositionConsistency($request)) {
             alert()->error($this->message->shout('update.error'))->persistent("Close");
@@ -168,15 +168,13 @@ class TeamMemberController extends Controller
      * @param  App\TeamMember  $teamMember
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id, TeamMember $teamMember)
+    public function destroy($id)
     {
-        $teamMember = $teamMember->findOrFail($id);
+        $teamMember = $this->user->member()->findOrFail($id);
+        $teamMember->delete();
 
         alert()->success($this->message->shout('destroy.success'))->persistent("Close");
 
-        if ($this->user->category()->first() == null) {
-            return redirect('/dashboard');
-        }
         return redirect('/dashboard/users');
     }
 
