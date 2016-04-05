@@ -16,7 +16,7 @@ interface UserContract
      * @param  App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function index(TeamMember $teamMember);
+    public function index();
 
     /**
      * Show the form for creating a new user.
