@@ -23,10 +23,18 @@
             <div class="tabContainer">
                 <div id="tab1" class="tabContent">
                     Web Development Competition (WDC) {{ Site::get('site_name') }} merupakan kompetisi berupa membangun sebuah aplikasi berbasis web. Web Development Competition terbuka bagi mahasiswa seluruh universitas di Yogyakarta. Kompetisi ini bertujuan untuk menyaring bakat-bakat muda di Yogyakarta, melalui ide-ide <i>briliant</i> mereka.
+                    <h3>Alur Pendaftaran</h3>
+                    <ol>
+                        <li>Melakukan pendaftaran account tim <a href="{{ url('auth/register') }}" target="_blank">disini</a>, kemudian mengisi identitas masing-masing anggota di dalam dashboard sistem atau mendaftar pada stand di kantor HMTF FTI UII.</li>
+                        <li>Peserta melunasi biaya pendaftaran sebesar <b>Rp. 50.000,00</b> ke rekening Mandiri <b>1370012005217 a/n DHIYA MAHDI ASRINY</b>.</li>
+                        <li>Peserta melakukan upload bukti pembayaran dan surat pernyataan ke dalam dashboard sistem.</li>
+                        <li>Setelah selesai melakukan upload bukti pembayaran dan surat pernyataan, peserta mengkonfirmasi di nomor 085600095453 (siwi) bahwa kelompok tersebut telah melengkapi seluruh persyaratan untuk mengikuti kompetisi Web Development Competition.</li>
+                        <li>Peserta akan mendapat balasan email dari panitia mengenai status keikutsertaannya dalam acara Porsematif 2016</li>
+                    </ol>
                     <h3>Timeline Kompetisi</h3>
                     <ol>
                         <li>Pendaftaran Online : 22 Maret - 20 April 2016</li>
-                        <li>Pengumpulan Karya : 22 Maret - 22 April 2016</li>
+                        <li>Pengumpulan Proposal : 22 Maret - 22 April 2016</li>
                         <li>Babak Final : 8 Mei 2016</li>
                     </ol>
                     <h3>Alur Kompetisi</h3>
@@ -40,6 +48,7 @@
                     <h3>Syarat Peserta</h3>
                     <ul>
                         <li>Peserta merupakan mahasiswa aktif D1/D2/D3/D4/S1 dalam lingkup perguruan tinggi di Yogyakarta.</li>
+                        <li>Peserta wajib mengumpulkan surat pernyataan dari Universitas peserta, yang menerangkan bahwasanya peserta yang bersangkutan adalah benar-benar mahasiswa yang berasal dari Universitas tersebut.</li>
                         <li>Peserta harus mengisi pendaftaran dengan lengkap dan memberikan informasi yang dapat dipertanggung jawabkan.</li>
                         <li>Peserta merupakan tim yang beranggotakan maksimal 3 orang dalam satu universitas yang sama.</li>
                         <li>Jumlah tim dalam satu universitas tidak dibatasi.</li>
@@ -81,12 +90,12 @@
                     </ul>
                 </div>
                 <div id="tab3" class="tabContent">
-                    <h3>Pengumpulan Karya</h3>
+                    <h3>Pengumpulan Proposal</h3>
                     <ul>
-                        <li>Proposal dikompres dengan ekstensi *.rar atau *.zip dengan format nama PORSEMATIF2016-WDC-[NAMA TIM]-[NAMA KARYA].<br>
+                        <li>Proposal dikompres dengan ekstensi *.rar atau *.zip dengan format nama PORSEMATIF2016-WDC-[NAMA TIM]-[JUDUL PROPOSAL].<br>
                         Contoh : PORSEMATIF2016-WDC-BangoFC-Rumah Goyang</li>
                         <li>Ukuran File maksimum yaitu 25 Mb</li>
-                        <li>Karya di upload pada bagian upload karya di dashboard team. (Setelah akun terverifikasi)</li>
+                        <li>Proposal di upload pada bagian upload karya di dashboard team. (Setelah akun terverifikasi)</li>
                         <li>Tim yang lolos akan diumumkan melalui website {{ Site::get('site_name') }} ini dan juga melalui email tim.</li>
                     </ul>
                 </div>
