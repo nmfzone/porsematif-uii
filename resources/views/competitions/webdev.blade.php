@@ -33,15 +33,15 @@
                     </ol>
                     <h3>Timeline Kompetisi</h3>
                     <ol>
-                        <li>Pendaftaran Online : 22 Maret - 20 April 2016</li>
-                        <li>Pengumpulan Proposal : 22 Maret - 22 April 2016</li>
-                        <li>Babak Final : 8 Mei 2016</li>
+                        <li>Pendaftaran Online : 22 Maret - 14 April 2016</li>
+                        <li>Pengumpulan Proposal : 22 Maret - 27 April 2016 pukul 24:00</li>
+                        <li>Babak Final : 5 Mei 2016</li>
                     </ol>
                     <h3>Alur Kompetisi</h3>
                     <ol>
                         <li>Seleksi ide dan proposal.</li>
                         <li>10 Tim terbaik akan maju ke babak final.</li>
-                        <li>Babak final berupa presentasi aplikasi di depan dewan juri.</li>
+                        <li>Babak final berupa presentasi aplikasi di depan dewan juri, bertempat di Auditorium Fakultas Teknologi Industri, Universitas Islam Indonesia.</li>
                     </ol>
                 </div>
                 <div id="tab2" class="tabContent">
