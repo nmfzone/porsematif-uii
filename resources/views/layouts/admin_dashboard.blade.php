@@ -66,13 +66,19 @@
                             <a href="#"><i class="fa fa-users fa-fw"></i> Users<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
+                                    <a href="{{ url('dashboard/protected/users/create') }}">Tambah Team</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url('dashboard/protected/users') }}">List Team</a>
+                                </li>
+                                <li>
                                     <a href="{{ url('dashboard/protected/users/registered-on-this-day') }}">Pendaftar Hari Ini</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('dashboard/protected/users/verified') }}">User Terverifikasi</a>
+                                    <a href="{{ url('dashboard/protected/users/verified') }}">Pendaftar Terverifikasi</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('dashboard/protected/users/not-verified') }}">User Belum Terverifikasi</a>
+                                    <a href="{{ url('dashboard/protected/users/not-verified') }}">Pendaftar Belum Terverifikasi</a>
                                 </li>
                             </ul>
                         </li>

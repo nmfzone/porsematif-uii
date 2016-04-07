@@ -13,7 +13,7 @@
 </div>
 
 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-    <label class="col-md-4 control-label">Nama</label>
+    <label class="col-md-4 control-label">Nama Team</label>
 
     <div class="col-md-6">
         @yield('input_name')

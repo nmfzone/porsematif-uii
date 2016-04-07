@@ -47,7 +47,9 @@ class UserManagementController extends Controller
      */
     public function index()
     {
-        return redirect('dashboard/protected');
+        $pageTitle = $this->message->shout('index.title');
+
+        return view('dashboard.admin.users.index', compact('pageTitle'));
     }
 
     /**
@@ -87,6 +89,23 @@ class UserManagementController extends Controller
     }
 
     /**
+     * Get all users by ajax request.
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getUsers()
+    {
+        return Datatables::of(User::where('status', 0))
+            ->addColumn('action', function ($user) {
+                $action = '<a href="'. url("dashboard/protected/users/" . $user->id . "/edit") .'" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-edit"></i> Edit</a>';
+                $action .= '<a href="'. url("dashboard/protected/users/" . $user->id) .'" class="btn btn-xs btn-success show-this"><i class="glyphicon glyphicon-zoom-in"></i> Lihat</a>';
+                $action .= '<a href="'. url("dashboard/protected/users/" . $user->id) .'" class="btn btn-xs btn-primary delete-this"><i class="glyphicon glyphicon-remove"></i> Hapus</a>';
+                return $action;
+            })
+            ->make(true);
+    }
+
+    /**
      * Get users that registered on that day by ajax request.
      *
      * @return \Illuminate\Http\JsonResponse
@@ -109,7 +128,7 @@ class UserManagementController extends Controller
                 $action = '<a href="'. url("dashboard/protected/users/" . $user_category->user->id . "/edit") .'" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-edit"></i> Edit</a>';
                 $action .= '<a href="'. url("dashboard/protected/users/" . $user_category->user->id) .'" class="btn btn-xs btn-success show-this"><i class="glyphicon glyphicon-zoom-in"></i> Lihat</a>';
                 $action .= '<a href="'. url("dashboard/protected/users/makeVerified/" . $user_category->id) .'" class="btn btn-xs btn-warning verified-this"><i class="glyphicon glyphicon-ok"></i> Verifikasi</a>';
-                $action .= '<a href="'. url("dashboard/protected/users/" . $user_category->id) .'" class="btn btn-xs btn-danger delete-this"><i class="glyphicon glyphicon-remove"></i> Hapus</a>';
+                $action .= '<a href="'. url("dashboard/protected/users/" . $user_category->id . "/destroy") .'" class="btn btn-xs btn-danger delete-this"><i class="glyphicon glyphicon-remove"></i> Hapus</a>';
                 return $action;
             })
             ->make(true);
@@ -127,7 +146,7 @@ class UserManagementController extends Controller
                 $action = '<a href="'. url("dashboard/protected/users/" . $user_category->user->id . "/edit") .'" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-edit"></i> Edit</a>';
                 $action .= '<a href="'. url("dashboard/protected/users/" . $user_category->user->id) .'" class="btn btn-xs btn-success show-this"><i class="glyphicon glyphicon-zoom-in"></i> Lihat</a>';
                 $action .= '<a href="'. url("dashboard/protected/users/makeUnverified/" . $user_category->id) .'" data-message="User status in this competition will be unverified." data-button-text="Yes, unverified it!" class="btn btn-xs btn-warning verified-this"><i class="glyphicon glyphicon-ok"></i> Unverifikasi</a>';
-                $action .= '<a href="'. url("dashboard/protected/users/" . $user_category->id) .'" class="btn btn-xs btn-primary delete-this"><i class="glyphicon glyphicon-remove"></i> Hapus</a>';
+                $action .= '<a href="'. url("dashboard/protected/users/" . $user_category->id . "/destroy") .'" class="btn btn-xs btn-primary delete-this"><i class="glyphicon glyphicon-remove"></i> Hapus</a>';
                 return $action;
             })
             ->make(true);
@@ -187,15 +206,15 @@ class UserManagementController extends Controller
         $surat_pernyataan = $user->image()->where('type', 'Surat Pernyataan')->get();
 
         return view(
-                'dashboard.admin.users.show',
-                compact(
-                    'pageTitle',
-                    'user',
-                    'competitions',
-                    'members',
-                    'bukti_pembayaran',
-                    'surat_pernyataan'
-                )
+            'dashboard.admin.users.show',
+            compact(
+                'pageTitle',
+                'user',
+                'competitions',
+                'members',
+                'bukti_pembayaran',
+                'surat_pernyataan'
+            )
         );
     }
 
@@ -297,12 +316,32 @@ class UserManagementController extends Controller
     }
 
     /**
+     * Remove the specified user from storage.
+     *
+     * @param  App\User  $user
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(User $user)
+    {
+        if ($user->id == 1) {
+            alert()->success($this->message->shout('destroy.error'))->persistent("Close");
+            return redirect()->back();
+        }
+
+        $user->delete();
+
+        alert()->success($this->message->shout('destroy.success.a'))->persistent("Close");
+
+        return redirect()->back();
+    }
+
+    /**
      * Remove the specified user_category from storage.
      *
      * @param  App\UserCategory  $userCategory
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id, UserCategory $userCategory)
+    public function destroyUserCategories($id, UserCategory $userCategory)
     {
         $userCategory = $userCategory->findOrFail($id);
         $userCategory->delete();

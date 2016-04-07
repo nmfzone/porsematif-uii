@@ -104,6 +104,10 @@ Route::group(['middleware' => 'auth'], function ()
             'as'   => 'dashboard.protected.users.getNotVerified',
             'uses' => 'Dashboard\Admin\UserManagementController@getNotVerifiedUsers'
         ]);
+        Route::get('users/getUsers', [
+            'as'   => 'dashboard.protected.users.getUsers',
+            'uses' => 'Dashboard\Admin\UserManagementController@getUsers'
+        ]);
         Route::put('users/makeVerified/{user_categories}', [
             'as'   => 'dashboard.protected.users.verifyUserByCategory',
             'uses' => 'Dashboard\Admin\UserManagementController@verifyUserByCategory'
@@ -112,9 +116,9 @@ Route::group(['middleware' => 'auth'], function ()
             'as'   => 'dashboard.protected.users.unverifyUserByCategory',
             'uses' => 'Dashboard\Admin\UserManagementController@unverifyUserByCategory'
         ]);
-        Route::delete('users/{user_categories}', [
-            'as'   => 'dashboard.protected.users.destroy',
-            'uses' => 'Dashboard\Admin\UserManagementController@destroy'
+        Route::delete('users/{user_categories}/destroy', [
+            'as'   => 'dashboard.protected.user_categories.destroy',
+            'uses' => 'Dashboard\Admin\UserManagementController@destroyUserCategories'
         ]);
         Route::resource('users', 'Dashboard\Admin\UserManagementController');
         Route::resource('competitions', 'Dashboard\Admin\CategoryController');

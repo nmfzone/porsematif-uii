@@ -8,28 +8,32 @@ return [
                 'title' => 'Pendaftar Hari Ini',
             ],
             'verified' => [
-                'title' => 'Daftar User Terverifikasi',
+                'title' => 'List Pendaftar Terverifikasi',
             ],
             'notVerified' => [
-                'title' => 'Daftar User Belum Terverifikasi',
+                'title' => 'List Pendaftar Belum Terverifikasi',
+            ],
+            'index' => [
+                'title' => 'List Team'
             ],
             'create' => [
-                'title' => 'Tambah User',
+                'title' => 'Tambah Team',
             ],
             'store' => [
-                'success' => 'User baru berhasil ditambahkan.',
+                'success' => 'Team baru berhasil ditambahkan.',
             ],
             'update' => [
                 'success' => [
                     'a' => 'Data anda berhasil di update.',
-                    'b' => 'Data user berhasil di update.',
+                    'b' => 'Data team berhasil di update.',
                 ],
             ],
             'destroy' => [
                 'success' => [
-                    'a' => 'Account anda berhasil di hapus.',
-                    'b' => 'User berhasil di hapus.',
+                    'a' => 'Team berhasil di hapus',
+                    'b' => 'Pendaftar berhasil di hapus.',
                 ],
+                'error' => 'Team tidak bisa di hapus.',
             ],
         ],
         'teamMember' => [
