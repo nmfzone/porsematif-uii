@@ -147,10 +147,21 @@ class AuthController extends Controller
         $newUser->activation_key = $code;
         $newUser->save();
 
-        $link = url("/auth/emails/verify/" . $code);
-        $this->dispatch(new SendVerificationEmail($newUser, $link));
+        /*
+         * $link = url("/auth/emails/verify/" . $code);
+         * $this->dispatch(new SendVerificationEmail($newUser, $link));
+         */
+
+        $credentials = [
+            'username'  => $request->get('username'),
+            'password'  => $request->get('password')
+        ];
 
         alert()->success($this->message->shout('registration.success'))->persistent("Close");
+
+        if (Auth::attempt($credentials)) {
+            return $this->redirectPath;
+        }
 
         return redirect('auth/login');
     }
