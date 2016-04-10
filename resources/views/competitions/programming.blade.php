@@ -31,8 +31,9 @@
                     <ol>
                         <li>Melakukan pendaftaran account tim <a href="{{ url('auth/register') }}" target="_blank">disini</a>, kemudian mengisi identitas masing-masing anggota di dalam dashboard sistem atau mendaftar pada stand di kantor HMTF FTI UII.</li>
                         <li>Peserta melunasi biaya pendaftaran sebesar <b>Rp. 50.000,00</b> ke rekening Mandiri <b>1370012005217 a/n DHIYA MAHDI ASRINY</b>.</li>
-                        <li>Peserta melakukan upload bukti pembayaran dan kartu pelajar ke dalam dashboard sistem.</li>
-                        <li>Peserta yang telah melengkapi administrasi akan diberikan password untuk login ke sistem.</li>
+                        <li>Peserta melakukan upload bukti pembayaran dan surat pernyataan ke dalam dashboard sistem.</li>
+                        <li>Setelah selesai melakukan upload bukti pembayaran dan surat pernyataan, peserta mengkonfirmasi di nomor 085600095453 (siwi) bahwa kelompok tersebut telah melengkapi seluruh persyaratan untuk mengikuti kompetisi Programming Competition.</li>
+                        <li>Peserta yang telah melengkapi administrasi akan diberikan password untuk login ke sistem (Maksimal 5 hari sebelum kompetisi dimulai).</li>
                         <li>Panitia akan melakukan pengumuman tim yang lolos ke babak final.</li>
                         <li>Babak final (live coding) akan dilangsungkan di Teknik Informatika, Universitas Islam Indonesia.</li>
                     </ol>
@@ -42,6 +43,8 @@
 <ol>
     <li>Peserta programmng Competition adalah satu tim yang terdiri dari maksimal 3 orang.</li>
     <li>Peserta merupakan mahasiswa mahasiswa baru (Maksimal semester 2) se-Regional Yogyakarta</li>
+    <li>Peserta wajib mengumpulkan surat pernyataan dari Universitas peserta, yang menerangkan bahwasanya peserta yang bersangkutan adalah benar-benar mahasiswa yang berasal dari Universitas tersebut.</li>
+    <li>Peserta harus mengisi pendaftaran dengan lengkap dan memberikan informasi yang dapat dipertanggung jawabkan.</li>
     <li>Setiap kampus diperbolehkan untuk mendaftarkan lebih dari satu tim.</li>
     <li>Tidak diperkenankan ada peserta yang terdaftar dalam dua tim yang berbeda.</li>
     <li>Satu tim harus berasal dari kampus yang sama.</li>
@@ -51,8 +54,10 @@
 </ol>
 <h3>Divisi Senior</h3>
 <ol>
-    <li>Peserta programmng Competition adalah satu tim yang terdiri dari maksimal 3 orang.</li>
+    <li>Peserta Programming Competition adalah satu tim yang terdiri dari maksimal 3 orang.</li>
     <li>Peserta merupakan mahasiswa setingkat D3/D4/S1 se-Regional Yogyakarta yang berstatus aktif</li>
+    <li>Peserta wajib mengumpulkan surat pernyataan dari Universitas peserta, yang menerangkan bahwasanya peserta yang bersangkutan adalah benar-benar mahasiswa yang berasal dari Universitas tersebut.</li>
+    <li>Peserta harus mengisi pendaftaran dengan lengkap dan memberikan informasi yang dapat dipertanggung jawabkan.</li>
     <li>Setiap kampus diperbolehkan untuk mendaftarkan lebih dari satu tim.</li>
     <li>Tidak diperkenankan ada peserta yang terdaftar dalam dua tim yang berbeda.</li>
     <li>Satu tim harus berasal dari kampus yang sama.</li>
