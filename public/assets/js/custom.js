@@ -1,1 +1,224 @@
-$(function(){$(".tabContent").hide(),$("ul.tabs li:first").addClass("active").show(),$(".tabContent:first").show(),$("ul.tabs li").click(function(){$("ul.tabs li").removeClass("active"),$(this).addClass("active"),$(".tabContent").hide();var t=$(this).find("a").attr("href");return $(t).fadeIn(),!1}),$(".testimonialContent").hide(),$(".testimonialTabs ol a:first").addClass("active").show(),$(".testimonialContent:first").show(),$(".testimonialTabs ol a").click(function(){$(".testimonialTabs ol a").removeClass("active"),$(this).addClass("active"),$(".testimonialContent").hide();var t=$(this).attr("href");return $(t).fadeIn(1e3),!1});var t=1;window.setInterval(function(){$(".testimonialTabs ol a:last-child").hasClass("active")?t=1:t++,$(".testimonialTabs ol a:nth-child("+t+")").trigger("click")},4e3);var e={elementSelector:".the-tables",classSelector:".delete-this",modalTitle:"Are you sure?",modalMessage:"You will not be able to recover this entry?",modalConfirmButtonText:"Yes, delete it!",laravelToken:null,url:"/",init:function(){$(this.elementSelector).on("click",this.classSelector,{self:this},this.handleClick)},handleClick:function(t){t.preventDefault();var e=t.data.self,a=$(this);e.modalTitle=a.data("title")||e.modalTitle,e.modalMessage=a.data("message")||e.modalMessage,e.modalConfirmButtonText=a.data("button-text")||e.modalConfirmButtonText,e.url=a.attr("href"),e.laravelToken=$("meta[name=token]").attr("content"),e.confirmDelete()},confirmDelete:function(){swal({title:this.modalTitle,text:this.modalMessage,type:"warning",showCancelButton:!0,confirmButtonColor:"#DD6B55",confirmButtonText:this.modalConfirmButtonText,closeOnConfirm:!0},function(){this.makeDeleteRequest()}.bind(this))},makeDeleteRequest:function(){var t=$("<form>",{method:"POST",action:this.url}),e=$("<input>",{type:"hidden",name:"_token",value:this.laravelToken}),a=$("<input>",{name:"_method",type:"hidden",value:"DELETE"});return t.append(e,a).appendTo("body").submit()}};e.init();var a={elementSelector:".the-tables",classSelector:".verified-this",modalTitle:"Are you sure?",modalMessage:"User status in this competition will be verified.",modalConfirmButtonText:"Yes, verified it!",laravelToken:null,url:"/",init:function(){$(this.elementSelector).on("click",this.classSelector,{self:this},this.handleClick)},handleClick:function(t){t.preventDefault();var e=t.data.self,a=$(this);e.modalTitle=a.data("title")||e.modalTitle,e.modalMessage=a.data("message")||e.modalMessage,e.modalConfirmButtonText=a.data("button-text")||e.modalConfirmButtonText,e.url=a.attr("href"),e.laravelToken=$("meta[name=token]").attr("content"),e.confirmVerified()},confirmVerified:function(){swal({title:this.modalTitle,text:this.modalMessage,type:"warning",showCancelButton:!0,confirmButtonColor:"#DD6B55",confirmButtonText:this.modalConfirmButtonText,closeOnConfirm:!0},function(){this.makeVerifiedRequest()}.bind(this))},makeVerifiedRequest:function(){var t=$("<form>",{method:"POST",action:this.url}),e=$("<input>",{type:"hidden",name:"_token",value:this.laravelToken}),a=$("<input>",{name:"_method",type:"hidden",value:"PUT"});return t.append(e,a).appendTo("body").submit()}};a.init();var i=jQuery(document.body).width(),n=jQuery(document.body).height();$("#galleries").change(function(t){$(".galleries_prev").fadeIn("fast").attr("src",URL.createObjectURL(t.target.files[0])),$(".galleries_name").val(t.target.files[0].name)}),$("#pembayaran").change(function(t){$(".pem_file_prev").fadeIn("fast").attr("src",URL.createObjectURL(t.target.files[0])),$(".pem_file_name").val(t.target.files[0].name)}),$("#surat_pernyataan").change(function(t){$(".surper_file_prev").fadeIn("fast").attr("src",URL.createObjectURL(t.target.files[0])),$(".surper_file_name").val(t.target.files[0].name)});var l=-1;$(".showImage").on("click",function(t){var e=$(t.target).data("note"),a=$(t.target).data("created"),n=$(t.target).data("width");l=n;var o=1==n?i/4:i/5;$("#imagepreview").attr("src",$(t.target).attr("src")).attr("width",o).attr("data-width",n),""!=e?$("#imagenote").html("Catatan : "+e):$("#imagenote").html(""),$("#imagecreated").html("Waktu upload : "+a),$("#imagemodal").modal("show")}),jQuery(window).resize(function(){i=jQuery(document.body).width(),n=jQuery(document.body).height();var t="#imagepreview",e=1==l?i/4:i/5;$(t).attr("width",e)}).resize()});
+$(function() {
+
+  $(".tabContent").hide(); 
+  $("ul.tabs li:first").addClass("active").show(); 
+  $(".tabContent:first").show(); 
+
+  $("ul.tabs li").click(function () {
+    $("ul.tabs li").removeClass("active"); 
+    $(this).addClass("active"); 
+    $(".tabContent").hide(); 
+    var activeTab = $(this).find("a").attr("href"); 
+    $(activeTab).fadeIn(); 
+    return false;
+  });
+
+  $(".testimonialContent").hide(); 
+  $(".testimonialTabs ol a:first").addClass("active").show(); 
+  $(".testimonialContent:first").show(); 
+
+  $(".testimonialTabs ol a").click(function () {
+    $(".testimonialTabs ol a").removeClass("active"); 
+    $(this).addClass("active"); 
+    $(".testimonialContent").hide(); 
+    var activeTab = $(this).attr("href");
+    $(activeTab).fadeIn(1000);
+
+    return false;
+  });
+
+  var currentTab = 1;
+  window.setInterval(function(){
+    if($('.testimonialTabs ol a:last-child').hasClass('active'))
+      currentTab=1;
+    else
+      currentTab++;
+    $('.testimonialTabs ol a:nth-child('+currentTab+')').trigger('click');
+  }, 4000);
+
+  var deleter = {
+    elementSelector       : ".the-tables",
+    classSelector         : ".delete-this",
+    modalTitle            : "Are you sure?",
+    modalMessage          : "You will not be able to recover this entry?",
+    modalConfirmButtonText: "Yes, delete it!",
+    laravelToken          : null,
+    url                   : "/",
+
+    init: function() {
+      $(this.elementSelector).on('click', this.classSelector, {self:this}, this.handleClick);
+    },
+
+    handleClick: function(event) {
+      event.preventDefault();
+
+      var self = event.data.self;
+      var link = $(this);
+
+      self.modalTitle             = link.data('title') || self.modalTitle;
+      self.modalMessage           = link.data('message') || self.modalMessage;
+      self.modalConfirmButtonText = link.data('button-text') || self.modalConfirmButtonText;
+      self.url                    = link.attr('href');
+      self.laravelToken           = $("meta[name=token]").attr('content');
+
+      self.confirmDelete();
+    },
+
+    confirmDelete: function() {
+      swal({
+        title             : this.modalTitle,
+        text              : this.modalMessage,
+        type              : "warning",
+        showCancelButton  : true,
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText : this.modalConfirmButtonText,
+        closeOnConfirm    : true
+      },
+      function() {
+        this.makeDeleteRequest()
+      }.bind(this)
+      );
+    },
+
+    makeDeleteRequest: function() {
+      var form =
+        $('<form>', {
+          'method': 'POST',
+          'action': this.url
+        });
+
+      var token =
+        $('<input>', {
+          'type': 'hidden',
+          'name': '_token',
+          'value': this.laravelToken
+        });
+
+      var hiddenInput =
+        $('<input>', {
+          'name': '_method',
+          'type': 'hidden',
+          'value': 'DELETE'
+        });
+
+      return form.append(token, hiddenInput).appendTo('body').submit();
+    }
+  };
+  deleter.init();
+
+  var verified = {
+    elementSelector       : ".the-tables",
+    classSelector         : ".verified-this",
+    modalTitle            : "Are you sure?",
+    modalMessage          : "User status in this competition will be verified.",
+    modalConfirmButtonText: "Yes, verified it!",
+    laravelToken          : null,
+    url                   : "/",
+
+    init: function() {
+      $(this.elementSelector).on('click', this.classSelector, {self:this}, this.handleClick);
+    },
+
+    handleClick: function(event) {
+      event.preventDefault();
+
+      var self = event.data.self;
+      var link = $(this);
+
+      self.modalTitle             = link.data('title') || self.modalTitle;
+      self.modalMessage           = link.data('message') || self.modalMessage;
+      self.modalConfirmButtonText = link.data('button-text') || self.modalConfirmButtonText;
+      self.url                    = link.attr('href');
+      self.laravelToken           = $("meta[name=token]").attr('content');
+
+      self.confirmVerified();
+    },
+
+    confirmVerified: function() {
+      swal({
+        title             : this.modalTitle,
+        text              : this.modalMessage,
+        type              : "warning",
+        showCancelButton  : true,
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText : this.modalConfirmButtonText,
+        closeOnConfirm    : true
+      },
+      function() {
+        this.makeVerifiedRequest()
+      }.bind(this)
+      );
+    },
+
+    makeVerifiedRequest: function() {
+      var form =
+        $('<form>', {
+          'method': 'POST',
+          'action': this.url
+        });
+
+      var token =
+        $('<input>', {
+          'type': 'hidden',
+          'name': '_token',
+          'value': this.laravelToken
+        });
+
+      var hiddenInput =
+        $('<input>', {
+          'name': '_method',
+          'type': 'hidden',
+          'value': 'PUT'
+        });
+
+      return form.append(token, hiddenInput).appendTo('body').submit();
+    }
+  };
+  verified.init();
+
+  var winWidth = jQuery(document.body).width();
+  var winHeight = jQuery(document.body).height();
+
+  $('#galleries').change(function(e){
+    $('.galleries_prev').fadeIn("fast").attr('src', URL.createObjectURL(e.target.files[0]));
+    $('.galleries_name').val(e.target.files[0].name);
+  });
+
+  $('#pembayaran').change(function(e){
+    $('.pem_file_prev').fadeIn("fast").attr('src', URL.createObjectURL(e.target.files[0]));
+    $('.pem_file_name').val(e.target.files[0].name);
+  });
+
+  $('#surat_pernyataan').change(function(e){
+    $('.surper_file_prev').fadeIn("fast").attr('src', URL.createObjectURL(e.target.files[0]));
+    $('.surper_file_name').val(e.target.files[0].name);
+  });
+
+  var tmpEWidth = -1;
+  $(".showImage").on("click", function(e) {
+    var dtNote = $(e.target).data('note');
+    var dtCreated = $(e.target).data('created');
+    var eWidth = $(e.target).data('width');
+    tmpEWidth = eWidth;
+    var w = eWidth == 1 ? winWidth/4 : winWidth/5;
+    $('#imagepreview').attr('src', $(e.target).attr('src')).attr('width', w).attr('data-width', eWidth); 
+    if (dtNote != "") {
+      $('#imagenote').html("Catatan : " + dtNote);
+    } else {
+      $('#imagenote').html("");
+    }
+    $('#imagecreated').html("Waktu upload : " + dtCreated);
+    $('#imagemodal').modal('show');
+  });
+
+  jQuery(window).resize(function () {
+    winWidth = jQuery(document.body).width();
+    winHeight = jQuery(document.body).height();
+
+    // ShowImageClick
+    var el = '#imagepreview';
+    var w = tmpEWidth == 1 ? winWidth/4 : winWidth/5;
+    $(el).attr('width', w);
+  }).resize();
+
+});

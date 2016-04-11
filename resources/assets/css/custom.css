@@ -308,6 +308,7 @@
 #pages .p-s-left ul.tabs {
   list-style: none;
   -webkit-padding-start: 0px;
+  -moz-padding-start: 0px;
 }
 
 #pages .p-s-left ul.tabs li {
