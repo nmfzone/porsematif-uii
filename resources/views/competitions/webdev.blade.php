@@ -48,7 +48,7 @@
                     <h3>Syarat Peserta</h3>
                     <ul>
                         <li>Peserta merupakan mahasiswa aktif D1/D2/D3/D4/S1 dalam lingkup perguruan tinggi di Yogyakarta.</li>
-                        <li>Peserta wajib mengumpulkan surat pernyataan dari Universitas peserta, yang menerangkan bahwasanya peserta yang bersangkutan adalah benar-benar mahasiswa yang berasal dari Universitas tersebut.</li>
+                        <li>Peserta wajib mengumpulkan surat pernyataan dari Universitas peserta, yang menyatakan bahwasanya peserta yang bersangkutan adalah benar-benar mahasiswa yang berasal dari Universitas tersebut.</li>
                         <li>Peserta harus mengisi pendaftaran dengan lengkap dan memberikan informasi yang dapat dipertanggung jawabkan.</li>
                         <li>Peserta merupakan tim yang beranggotakan maksimal 3 orang dalam satu universitas yang sama.</li>
                         <li>Jumlah tim dalam satu universitas tidak dibatasi.</li>
