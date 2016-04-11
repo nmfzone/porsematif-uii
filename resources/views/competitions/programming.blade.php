@@ -53,7 +53,7 @@
 <ol>
     <li>Peserta programmng Competition adalah satu tim yang terdiri dari maksimal 3 orang.</li>
     <li>Peserta merupakan mahasiswa mahasiswa baru (Maksimal semester 2) se-Regional Yogyakarta</li>
-    <li>Peserta wajib mengumpulkan surat pernyataan dari Universitas peserta, yang menerangkan bahwasanya peserta yang bersangkutan adalah benar-benar mahasiswa yang berasal dari Universitas tersebut.</li>
+    <li>Peserta wajib mengumpulkan surat pernyataan dari Universitas peserta, yang menyatakan bahwasanya peserta yang bersangkutan adalah benar-benar mahasiswa yang berasal dari Universitas tersebut.</li>
     <li>Peserta harus mengisi pendaftaran dengan lengkap dan memberikan informasi yang dapat dipertanggung jawabkan.</li>
     <li>Setiap kampus diperbolehkan untuk mendaftarkan lebih dari satu tim.</li>
     <li>Tidak diperkenankan ada peserta yang terdaftar dalam dua tim yang berbeda.</li>
@@ -66,7 +66,7 @@
 <ol>
     <li>Peserta Programming Competition adalah satu tim yang terdiri dari maksimal 3 orang.</li>
     <li>Peserta merupakan mahasiswa setingkat D3/D4/S1 se-Regional Yogyakarta yang berstatus aktif</li>
-    <li>Peserta wajib mengumpulkan surat pernyataan dari Universitas peserta, yang menerangkan bahwasanya peserta yang bersangkutan adalah benar-benar mahasiswa yang berasal dari Universitas tersebut.</li>
+    <li>Peserta wajib mengumpulkan surat pernyataan dari Universitas peserta, yang menyatakan bahwasanya peserta yang bersangkutan adalah benar-benar mahasiswa yang berasal dari Universitas tersebut.</li>
     <li>Peserta harus mengisi pendaftaran dengan lengkap dan memberikan informasi yang dapat dipertanggung jawabkan.</li>
     <li>Setiap kampus diperbolehkan untuk mendaftarkan lebih dari satu tim.</li>
     <li>Tidak diperkenankan ada peserta yang terdaftar dalam dua tim yang berbeda.</li>
