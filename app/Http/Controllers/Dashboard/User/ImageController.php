@@ -13,6 +13,21 @@ use App\Image;
 class ImageController extends Controller
 {
     /**
+     * The authenticated user.
+     */
+    private $user;
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->user = auth()->user();
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -81,14 +96,13 @@ class ImageController extends Controller
      * Remove the specified image from storage.
      *
      * @param  int  $id
-     * @param  App\Image  $image
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id, Image $image)
+    public function destroy($id)
     {
-        $image = $image->where('type', 'LIKE', '%Bukti Pembayaran%')
-                    ->orWhere('type', 'LIKE', '%Surat Pernyataan%')
-                    ->findOrFail($id);
+        $image = $this->user->image()->where('type', 'LIKE', '%Bukti Pembayaran%')
+            ->orWhere('type', 'LIKE', '%Surat Pernyataan%')
+            ->findOrFail($id);
         File::delete($image->url);
         $image->delete();
         alert()->success('File berhasil di hapus.')->persistent("Close");
