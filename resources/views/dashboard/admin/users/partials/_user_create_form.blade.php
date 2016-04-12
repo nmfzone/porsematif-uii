@@ -20,6 +20,10 @@
     <input type="text" class="form-control" name="institution_address" value="{{ old('institution_address') }}">
 @endsection
 
+@section('input_status')
+    <input type="text" class="form-control" name="status" value="{{ old('status') }}">
+@endsection
+
 @section('input_category')
     @foreach($competitions as $competition)
         <div class="checkbox">

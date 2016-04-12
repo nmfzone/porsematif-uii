@@ -20,6 +20,10 @@
     <input type="text" class="form-control" name="institution_address" value="{{ $user->institution_address }}">
 @endsection
 
+@section('input_status')
+    <input type="text" class="form-control" name="status" value="{{ $user->status }}">
+@endsection
+
 @section('input_category')
     @foreach($competitions as $competition)
         @if(in_array($competition->id, $registered_competitions))

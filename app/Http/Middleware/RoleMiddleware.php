@@ -17,6 +17,13 @@ class RoleMiddleware
     {
         $roles = $this->getMiddlewareParameterOnly(func_get_args());
 
+        if (auth()->user()->status == 4) {
+            alert()->success('Account anda telah di banned. Silahkan kontak administrator.')->persistent("Close");
+            auth()->logout();
+
+            return redirect('auth/login');
+        }
+
         foreach($roles as $role) {
             if (auth()->check() && auth()->user()->hasRole($role)) {
                 return $next($request);

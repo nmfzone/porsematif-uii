@@ -97,6 +97,20 @@
     </div>
 </div>
 
+<div class="form-group{{ $errors->has('status') ? ' has-error' : '' }}">
+    <label class="col-md-4 control-label">Status</label>
+
+    <div class="col-md-6">
+        @yield('input_status')
+
+        @if ($errors->has('status'))
+            <span class="help-block">
+                <strong>{{ $errors->first('status') }}</strong>
+            </span>
+        @endif
+    </div>
+</div>
+
 <div class="form-group{{ $errors->has('competition') ? ' has-error' : '' }}">
     <label class="col-md-4 control-label">Kompetisi</label>
 
