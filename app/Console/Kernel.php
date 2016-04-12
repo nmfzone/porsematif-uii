@@ -24,7 +24,6 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('inspire')
-                 ->hourly();
+        $schedule->exec('cp -rf ~/Code/PHP/porsematif/public/uploads ~/Code/Backup/Porsematif')->daily();
     }
 }
