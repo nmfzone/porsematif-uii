@@ -119,7 +119,7 @@ class UserController extends Controller implements UserContract
 
         alert()->success($this->message->shout('update.success'))->persistent("Close");
 
-        return redirect('dashboard/users');
+        return redirect('dashboard/users/settings');
     }
 
     /**
