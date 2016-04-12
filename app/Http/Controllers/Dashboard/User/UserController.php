@@ -41,7 +41,6 @@ class UserController extends Controller implements UserContract
     /**
      * Display a listing of the user.
      *
-     * @param  App\User  $user
      * @return \Illuminate\Http\Response
      */
     public function index()
@@ -63,7 +62,6 @@ class UserController extends Controller implements UserContract
     /**
      * Show the form for creating a new user.
      *
-     * @param  App\Role  $role
      * @return \Illuminate\Http\Response
      */
     public function create()
@@ -74,11 +72,9 @@ class UserController extends Controller implements UserContract
     /**
      * Store a newly created user in storage.
      *
-     * @param  App\Http\Requests\Users\CreateUserRequest  $request
-     * @param  App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function store(CreateUserRequest $request)
+    public function store()
     {
         return abort(404);
     }
@@ -86,7 +82,6 @@ class UserController extends Controller implements UserContract
     /**
      * Display the specified user.
      *
-     * @param  App\User  $user
      * @return \Illuminate\Http\Response
      */
     public function show()
@@ -97,11 +92,12 @@ class UserController extends Controller implements UserContract
     /**
      * Show the form for editing the specified user.
      *
-     * @param  App\User  $user
-     * @param  App\Role  $role
+     * @param  string  $user
+     * @param  bool  $setting
+     * @param  string  $pageTitle
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user, $setting = false, $pageTitle)
+    public function edit($user, $setting = false, $pageTitle)
     {
         if ($setting) {
             return view('dashboard.user.users.edit', compact('setting', 'pageTitle', 'user'));
@@ -113,13 +109,13 @@ class UserController extends Controller implements UserContract
     /**
      * Update the specified user in storage.
      *
+     * @param  int  $id
      * @param  App\Http\Requests\Users\UpdateUserRequest  $request
-     * @param  App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateUserRequest $request, User $user)
+    public function update($id, UpdateUserRequest $request)
     {
-        $user->update($request->all());
+        $this->user->update($request->all());
 
         alert()->success($this->message->shout('update.success'))->persistent("Close");
 
@@ -129,10 +125,9 @@ class UserController extends Controller implements UserContract
     /**
      * Remove the specified user from storage.
      *
-     * @param  App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy()
     {
         return abort(404);
     }
@@ -140,16 +135,13 @@ class UserController extends Controller implements UserContract
     /**
      * Show the form for editing the current user.
      *
-     * @param  App\User  $user
-     * @param  App\Role  $role
      * @return \Illuminate\Http\Response
      */
     public function setting()
     {
-        $user = auth()->user();
         $pageTitle = ucfirst($this->user->username) . " Account";
 
-        return $this->edit($user, true, $pageTitle);
+        return $this->edit($this->user, true, $pageTitle);
     }
 
     public function atLeatHasBeenRegistered()

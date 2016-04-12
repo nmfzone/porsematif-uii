@@ -14,7 +14,7 @@ class TeamMemberPolicy
      */
     public function createTeamMember(User $user)
     {
-        return $user->role->name == "User";
+        return $user->hasRole("User");
     }
 
     /**
@@ -25,6 +25,6 @@ class TeamMemberPolicy
      */
     public function updateTeamMember(User $user)
     {
-        return $user->role->name == "User";
+        return $user->hasRole("User");
     }
 }

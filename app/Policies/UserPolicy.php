@@ -14,7 +14,7 @@ class UserPolicy
      */
     public function createUsersMan(User $user)
     {
-        return $user->role->name == "Admin";
+        return $user->hasRole("Admin");
     }
 
     /**
@@ -25,7 +25,7 @@ class UserPolicy
      */
     public function updateUsersMan(User $user)
     {
-        return $user->role->name == "Admin" || $user->role->name == "User";
+        return $user->hasRole("Admin") || $user->hasRole("User");
     }
 
     /**
@@ -36,7 +36,7 @@ class UserPolicy
      */
     public function createTeamMember(User $user)
     {
-        return $user->role->name == "User";
+        return $user->hasRole("User");;
     }
 
     /**
@@ -47,7 +47,7 @@ class UserPolicy
      */
     public function updateTeamMember(User $user)
     {
-        return $user->role->name == "User";
+        return $user->hasRole("User");
     }
 
 }

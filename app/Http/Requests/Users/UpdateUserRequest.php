@@ -36,7 +36,7 @@ class UpdateUserRequest extends Request
             'password'              => 'confirmed|min:6',
             'institution_name'      => 'sometimes|required|max:255',
             'institution_address'   => 'sometimes|required|max:255',
-            'status'                => 'required|numeric|max:1',
+            'status'                => 'sometimes|required|numeric|max:1',
             'competition'           => 'sometimes|required',
         ];
     }

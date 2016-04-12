@@ -13,7 +13,6 @@ interface UserContract
     /**
      * Display a listing of the user.
      *
-     * @param  App\User  $user
      * @return \Illuminate\Http\Response
      */
     public function index();
@@ -21,7 +20,6 @@ interface UserContract
     /**
      * Show the form for creating a new user.
      *
-     * @param  App\Role  $role
      * @return \Illuminate\Http\Response
      */
     public function create();
@@ -29,16 +27,13 @@ interface UserContract
     /**
      * Store a newly created user in storage.
      *
-     * @param  App\Http\Requests\Users\CreateUserRequest  $request
-     * @param  App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function store(CreateUserRequest $request);
+    public function store();
 
     /**
      * Display the specified user.
      *
-     * @param  App\User  $user
      * @return \Illuminate\Http\Response
      */
     public function show();
@@ -46,33 +41,32 @@ interface UserContract
     /**
      * Show the form for editing the specified user.
      *
-     * @param  App\User  $user
-     * @param  App\Role  $role
+     * @param  string  $user
+     * @param  bool  $setting
+     * @param  string  $pageTitle
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user, $setting = false, $pageTitle);
+    public function edit($user, $setting = false, $pageTitle);
 
     /**
      * Update the specified user in storage.
      *
+     * @param  int  $id
      * @param  App\Http\Requests\Users\UpdateUserRequest  $request
-     * @param  App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateUserRequest $request, User $user);
+    public function update($id, UpdateUserRequest $request);
 
     /**
      * Remove the specified user from storage.
      *
-     * @param  App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user);
+    public function destroy();
 
     /**
      * Show the form for editing the current user.
      *
-     * @param  App\Role  $role
      * @return \Illuminate\Http\Response
      */
     public function setting();
