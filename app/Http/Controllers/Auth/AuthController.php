@@ -160,7 +160,7 @@ class AuthController extends Controller
         alert()->success($this->message->shout('registration.success'))->persistent("Close");
 
         if (Auth::attempt($credentials)) {
-            return $this->redirectPath;
+            return redirect($this->redirectPath());
         }
 
         return redirect('auth/login');
