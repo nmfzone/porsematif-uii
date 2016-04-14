@@ -33,7 +33,7 @@ class CreateUserRequest extends Request
             'password'              => 'required|confirmed|min:6',
             'institution_name'      => 'required|max:255',
             'institution_address'   => 'required|max:255',
-            'status'                => 'required|numeric|min:0|max:4',
+            'status'                => 'required|numeric|min:1|max:4',
             'competition'           => 'required',
         ];
     }
