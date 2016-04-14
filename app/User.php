@@ -39,14 +39,16 @@ class User extends Model implements AuthenticatableContract,
     protected $hidden = ['password', 'remember_token', 'activation_key', 'role_id'];
 
     /**
-     * Always make name attribute as Camel Case.
+     * Always set and make name attribute as Camel Case if not empty.
      *
      * @param  string  $value
      * @return void
      */
     public function setNameAttribute($value)
     {
-        $this->attributes['name'] = ucwords($value);
+        if (!empty($value)) {
+            $this->attributes['name'] = ucwords($value);
+        }
     }
 
     /**

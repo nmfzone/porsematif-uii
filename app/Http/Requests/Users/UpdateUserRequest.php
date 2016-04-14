@@ -27,16 +27,16 @@ class UpdateUserRequest extends Request
      */
     public function rules()
     {
-        $id = $this->route('users')->id;
+        $user = $this->route('users');
 
         return [
-            'username'              => 'required|max:255|alpha_dash|unique:users,username,'.$id,
-            'name'                  => 'max:255|unique:users,name,'.$id,
-            'email'                 => 'required|email|max:255|unique:users,email,'.$id,
+            'username'              => 'required|max:255|alpha_dash|unique:users,username,'.$user->id,
+            'name'                  => 'max:255|unique:users,name,'.$user->id,
+            'email'                 => 'required|email|max:255|unique:users,email,'.$user->id,
             'password'              => 'confirmed|min:6',
             'institution_name'      => 'sometimes|required|max:255',
             'institution_address'   => 'sometimes|required|max:255',
-            'status'                => 'sometimes|required|numeric|min:1|max:4',
+            'status'                => 'sometimes|required|numeric|min:0|max:4',
             'competition'           => 'sometimes|required',
         ];
     }
