@@ -276,8 +276,14 @@
                     <h4 class="header-text">Our Sponsors</h4>
                     <div class="logos">
                         <ul class="list-unstyled">
-                            <li ><img src="{{ asset('assets/images/starcomp.png') }}" width="200px" /></li>
-                            <li ><img src="{{ asset('assets/images/mangrove.png') }}" width="150px" /></li>
+                            <li ><img src="{{ asset('assets/images/bakpiapia.png') }}" width="350px" /></li>
+                            <li ><img src="{{ asset('assets/images/starcomp.png') }}" width="250px" /></li>
+                            <br><br>
+                            <li ><img src="{{ asset('assets/images/mangrove.png') }}" width="250px" /></li>
+                            <li ><img src="{{ asset('assets/images/movie-box.png') }}" width="250px" /></li>
+                            <br><br>
+                            <li ><img src="{{ asset('assets/images/gameloft-indonesia.png') }}" width="200px" /></li>
+                            <li ><img src="{{ asset('assets/images/yamaha-indonesia.jpg') }}" width="400px" /></li>
                         </ul>
                     </div>
                 </div>
