@@ -48,7 +48,7 @@
                     { data: 'category.name', name: 'category.name' },
                     { data: 'user.institution_name', name: 'user.institution_name' },
                     { data: 'created_at', name: 'created_at' },
-                    { data: 'action', name: 'action', orderable: false, searchable: false, width: '280px' }
+                    { data: 'action', name: 'action', orderable: false, searchable: false, width: '300px' }
                 ]
             });
         });

@@ -44,7 +44,7 @@
                     { data: 'email', name: 'email' },
                     { data: 'institution_name', name: 'institution_name' },
                     { data: 'created_at', name: 'created_at' },
-                    { data: 'action', name: 'action', orderable: false, searchable: false, width: '280px' }
+                    { data: 'action', name: 'action', orderable: false, searchable: false, width: '300px' }
                 ]
             });
         });
