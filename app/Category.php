@@ -25,7 +25,7 @@ class Category extends Model
      *
      * @var array
      */
-    protected $fillable = ['name', 'type'];
+    protected $fillable = ['name', 'price', 'started', 'ended', 'min_user', 'max_user', 'description', 'type', 'status'];
 
     /**
      * Get the user that owns the category.
