@@ -36,7 +36,7 @@ Perlombaan Desain Logo ditujukan untuk seluruh mahasiswa/I Teknik Informatika FT
 <h3>Jadwal Alur Perlombaan</h3>
 <ol>
     <li>Melakukan pendaftaran account tim <a href="{{ url('auth/register') }}" target="_blank">disini</a>, kemudian mengisi identitas masing-masing anggota di dalam dashboard sistem atau mendaftar pada stand di kantor HMTF FTI UII</li>
-    <li>Pendaftaran paling lambat tanggal 14 April 2016.</li>
+    <li>Pendaftaran paling lambat tanggal 25 April 2016.</li>
     <li>Pengumpulan hasil karya paling lambat tanggal 6 Mei 2016</li>
     <li>Pembayaran untuk pendaftaran online silahkan transfer ke nomor rekening Bank Mandiri 1370012005217 atas nama Dhiya Mahdi Asriny</li>
     <li>Peserta melakukan upload bukti pembayaran ke dalam dashboard sistem (bagi yang melakukan pembayaran melalui transfer bank).</li>

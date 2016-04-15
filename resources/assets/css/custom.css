@@ -68,6 +68,11 @@
   }
 }
 
+.landing-page #news {
+  margin-bottom: -50px;
+  margin-top: 50px;
+}
+
 .landing-page .section-presentation img {
   height: auto;
   position: relative;

@@ -59,7 +59,7 @@ PES 2016 merupakan rangkaian acara PORSEMATIF 2016, kompetisi ini ditunjukkan ke
 <ol>
     <li>Melakukan pendaftaran account tim <a href="{{ url('auth/register') }}" target="_blank">disini</a>, kemudian mengisi identitas masing-masing anggota di dalam dashboard sistem atau mendaftar pada stand di kantor HMTF FTI UII</li>
     <li>Peserta mengumpulkan syarat-syarat yang diperlukan kepada panitia</li>
-    <li>Pendaftaran paling lambat tanggal 14 April 2016.</li>
+    <li>Pendaftaran paling lambat tanggal 25 April 2016.</li>
     <li>Pembayaran untuk pendaftaran online silahkan transfer ke nomor rekening bank mandiri 1370012005217 atas nama Dhiya Mahdi Asriny</li>
     <li>Peserta melakukan upload bukti pembayaran ke dalam dashboard sistem (bagi yang melakukan pembayaran melalui transfer bank).</li>
     <li>Peserta wajib menghadiri TM (Technical Meeting) pada waktu yang sudah ditentukan oleh panitia</li>

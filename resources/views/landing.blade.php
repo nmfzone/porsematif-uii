@@ -94,6 +94,19 @@
                     </div>
                 </div>
             </div>
+            <div id="news">
+                <div class="container">
+                    <div class="row row-centered">
+                        <div class="col-md-12 col-centered">
+                            <div class="alert alert-success text-center">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <b style="font-size: 17px;">Pengumuman</b><br><br>
+                                Pendaftaran di semua kompetisi di perpanjang sampai tanggal <b>25 April 2016</b>. Silahkan mendaftar bagi yang belum mendaftar. Dan bagi yang sudah mendaftar, silahkan bersiap-siap sampai kompetisi dimulai. Ganbatte!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="section section-presentation" id="about">
                 <div class="container">
                     <div class="row">

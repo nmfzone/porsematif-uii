@@ -24,7 +24,7 @@
                     Programming Competition merupakan rangkaian acara PORSEMATIF 2016. Dalam kompetisi ini mahasiswa secara beregu akan diuji kemampuan nalarnya dalam pemrogramman melalui serangkaian soal-soal algoritma yang harus diselesaikan dalam waktu yang ditentukan. Bahasa pemrogramman yang digunakan dikompetisi ini adalah java/C++/C/pascal/python. Kompetisi ini akan dibagi menjadi dua kategori yaitu senior dan junior.
                     <h3>Timeline Kompetisi</h3>
                     <ol>
-                        <li>Pendaftaran Online : 22 Maret - 14 April 2016</li>
+                        <li>Pendaftaran Online : 22 Maret - 25 April 2016</li>
                         <li>Pemanasan Online : 1 Mei 2016</li>
                         <li>Babak Final : 4 Mei 2016</li>
                     </ol>
