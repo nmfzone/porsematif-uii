@@ -12,7 +12,11 @@
         </div>
         <h3 class="title">Seminar</h3>
         <div class="col-md-6 p-s-right col-centered">
-            <h1>Coming Soon</h1>
+            <center>
+                <img src="{{ asset('assets/images/poster_seminar.png') }}" width="90%" />
+                <br><br>
+                Informasi Pendaftaran dan sebagainya silahkan hubungi <i>contact person</i> terkait.
+            </center>
         </div>
     </div>
 
