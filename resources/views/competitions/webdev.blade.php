@@ -35,7 +35,7 @@
                     <ol>
                         <li>Pendaftaran Online : 22 Maret - 25 April 2016</li>
                         <li>Pengumpulan Proposal : 22 Maret - 28 April 2016 pukul 24:00</li>
-                        <li>Babak Final : 5 Mei 2016</li>
+                        <li>Babak Final : 4 Mei 2016</li>
                     </ol>
                     <h3>Alur Kompetisi</h3>
                     <ol>
