@@ -201,7 +201,7 @@ class UserManagementController extends Controller
     {
         $pageTitle = $user->name;
         $competitions = $user->category->all();
-        $members = $user->member()->get();
+        $members = $user->member()->orderBy('position', 'desc')->get();
         $bukti_pembayaran = $user->image()->where('type', 'Bukti Pembayaran')->get();
         $surat_pernyataan = $user->image()->where('type', 'Surat Pernyataan')->get();
 
