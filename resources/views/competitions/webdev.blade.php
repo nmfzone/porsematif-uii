@@ -34,7 +34,7 @@
                     <h3>Timeline Kompetisi</h3>
                     <ol>
                         <li>Pendaftaran Online : 22 Maret - 25 April 2016</li>
-                        <li>Pengumpulan Proposal : 22 Maret - 28 April 2016 pukul 24:00</li>
+                        <li>Pengumpulan Proposal : 22 Maret - 30 April 2016 pukul 24:00</li>
                         <li>Babak Final : 4 Mei 2016</li>
                     </ol>
                     <h3>Alur Kompetisi</h3>
@@ -94,7 +94,7 @@
                     <ul>
                         <li>Proposal dikompres dengan ekstensi *.rar atau *.zip dengan format nama PORSEMATIF2016-WDC-[NAMA TIM]-[JUDUL PROPOSAL].<br>
                         Contoh : PORSEMATIF2016-WDC-BangoFC-Rumah Goyang</li>
-                        <li>Ukuran File maksimum yaitu 25 Mb</li>
+                        <li>Ukuran File maksimum yaitu 50 Mb</li>
                         <li>Proposal di upload pada bagian upload karya di dashboard team. (Setelah akun terverifikasi)</li>
                         <li>Tim yang lolos akan diumumkan melalui website {{ Site::get('site_name') }} ini dan juga melalui email tim.</li>
                     </ul>

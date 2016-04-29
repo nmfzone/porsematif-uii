@@ -24,6 +24,13 @@
 <div class="form-group{{ $errors->has('karya') ? ' has-error' : '' }}">
     <label class="col-md-4 col-sm-4 col-xs-4 control-label">Karya</label>
 
+    <div class="col-md-6 col-sm-6 col-xs-6">
+        File .zip / .rar maksimum 50 Mb
+        <br><br>
+    </div>
+
+    <div class="col-md-4 col-sm-4 col-xs-4">
+    </div>
     <div class="col-md-6 col-sm-6 col-xs-6 karya_area">
         <div class="col-sm-9 col-md-9 col-xs-9" id="karya_left">
             <input id="karya" style="display:none;" name="karya" type="file" />

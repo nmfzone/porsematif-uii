@@ -94,7 +94,7 @@ return [
         ],
         'user_upload' => [
             'product' => [
-                'success' => 'File berhasil di upload.',
+                'success' => 'File karya berhasil di upload.',
                 'error' => 'Maaf ada kesalahan sistem :(',
             ],
         ],
