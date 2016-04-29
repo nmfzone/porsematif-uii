@@ -58,7 +58,7 @@ class UserPolicy
      */
     public function productUpload(User $user)
     {
-        return $user->hasRole("User");;
+        return $user->hasRole("User");
     }
 
 }
