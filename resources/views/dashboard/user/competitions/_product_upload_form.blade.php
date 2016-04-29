@@ -25,9 +25,6 @@
     <label class="col-md-4 col-sm-4 col-xs-4 control-label">Karya</label>
 
     <div class="col-md-6 col-sm-6 col-xs-6 karya_area">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-            <img src="" class="karya_file_prev" />
-        </div>
         <div class="col-sm-9 col-md-9 col-xs-9" id="karya_left">
             <input id="karya" style="display:none;" name="karya" type="file" />
             <input type="text" readonly class="form-control karya_file_name">
