@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Dashboard\User;
 
 use App\Http\Controllers\Controller;
 //use App\Awesome\Contracts\Controllers\User\UserContract;
+use App\Awesome\Traits\Controllers\User\CompetitionTrait;
 use Message;
 
 use App\TeamMember;
@@ -13,6 +14,9 @@ use App\Http\Requests\TeamMembers\UpdateTeamMemberRequest;
 
 class TeamMemberController extends Controller
 {
+
+    use CompetitionTrait;
+
     /**
      * The loader implementation.
      *
@@ -185,19 +189,6 @@ class TeamMemberController extends Controller
         }
 
         return false;
-    }
-
-    public function atLeatHasBeenRegistered()
-    {
-        $rs = $this->user->category()->first();
-
-        if ($rs == null) {
-            alert()->error($this->message->shout('alhbr.error'))->persistent("Close");
-
-            return "/dashboard/competitions/register";
-        }
-
-        return "";
     }
 
 }

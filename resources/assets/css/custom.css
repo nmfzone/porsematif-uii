@@ -708,13 +708,31 @@
   padding-right: 10px;
 }
 
+.userDashboard .surper_area .col-sm-9,
 .userDashboard .surper_area .col-md-9,
-.userDashboard .surper_area .col-md-3 {
+.userDashboard .surper_area .col-xs-9,
+.userDashboard .surper_area .col-sm-3,
+.userDashboard .surper_area .col-md-3,
+.userDashboard .surper_area .col-xs-3 {
   padding-left: 0;
   padding-right: 0;
 }
 
 .userDashboard .surper_area .col-md-9 {
+  padding-right: 10px;
+}
+
+.userDashboard .karya_area .col-sm-9,
+.userDashboard .karya_area .col-md-9,
+.userDashboard .karya_area .col-xs-9,
+.userDashboard .karya_area .col-sm-3,
+.userDashboard .karya_area .col-md-3,
+.userDashboard .karya_area .col-xs-3 {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.userDashboard .karya_area .col-md-9 {
   padding-right: 10px;
 }
 

@@ -63,14 +63,19 @@
                             </div>
                         </li>
                         <li>
-                            <a href="{{ url('dashboard/competitions/register') }}"><i class="fa fa-bar-chart-o fa-fw"></i> Daftar Kompetisi</a>
+                            <a href="{{ url('dashboard/competitions/register') }}"><i class="fa fa-rocket fa-fw"></i> Daftar Kompetisi</a>
                         </li>
                         @if (auth()->user()->category()->first() != null)
                         <li>
-                            <a href="{{ url('dashboard/competitions/requirements') }}"><i class="fa fa-bar-chart-o fa-fw"></i> Lengkapi Persyaratan</a>
+                            <a href="{{ url('dashboard/competitions/requirements') }}"><i class="fa fa-briefcase fa-fw"></i> Lengkapi Persyaratan</a>
                         </li>
+                        @if (UserMan::onlyGrantedCompetitions())
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Team<span class="fa arrow"></span></a>
+                            <a href="{{ url('dashboard/competitions/product/upload') }}"><i class="fa fa-upload fa-fw"></i> Upload Karya</a>
+                        </li>
+                        @endif
+                        <li>
+                            <a href="#"><i class="fa fa-users fa-fw"></i> Team<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="{{ url('dashboard/users') }}">Detail Team</a>

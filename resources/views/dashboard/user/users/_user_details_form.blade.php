@@ -159,6 +159,32 @@
 </div>
 </div>
 
+@if (UserMan::onlyGrantedCompetitions())
+<div class="container-fluid">
+<div class="row">
+<h3>List Karya</h3>
+@if (!$products->isEmpty())
+<table class="table table-striped the-tables">
+    <tr>
+        <th>Kompetisi</th>
+        <th>File</th>
+        <th class="text-center">Action</th>
+    </tr>
+    @foreach($products as $product)
+        <tr>
+            <td>{{ $category->find($product->id)->first()->name }}</td>
+            <td><i class="fa fa-download"></i> <a href="{{ url($product->url) }}" target="_blank">Download</a></td>
+            <td class="text-center"><a href="{{ url('/dashboard/competitions/product/' . $product->id) }}" class="btn btn-danger delete-this">Delete</a></td>
+        </tr>
+    @endforeach
+</table>
+@else
+    Belum ada karya yang ditambahkan
+    @endif
+</div>
+</div>
+@endif
+
 <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="imagesModal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">

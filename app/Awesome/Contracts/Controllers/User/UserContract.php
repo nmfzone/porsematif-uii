@@ -4,6 +4,7 @@ namespace App\Awesome\Contracts\Controllers\User;
 
 use App\User;
 use App\TeamMember;
+use App\Category;
 
 use App\Http\Requests\Users\CreateUserRequest;
 use App\Http\Requests\Users\UpdateUserRequest;
@@ -15,7 +16,7 @@ interface UserContract
      *
      * @return \Illuminate\Http\Response
      */
-    public function index();
+    public function index(Category $category);
 
     /**
      * Show the form for creating a new user.

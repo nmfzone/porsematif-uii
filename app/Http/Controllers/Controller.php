@@ -10,4 +10,13 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 abstract class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    public function toObject($array)
+    {
+        if (is_array($array)) {
+            return (object) array_map([$this, 'toObject'], $array);
+        }
+
+        return $array;
+    }
 }

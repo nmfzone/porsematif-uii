@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Dashboard\Admin;
 use App\Http\Controllers\Controller;
 use Message;
 use Datatables;
+use UserMan;
 use Carbon\Carbon;
 use App\DataTables\UsersDataTable;
 
@@ -197,13 +198,15 @@ class UserManagementController extends Controller
      * @param  App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user, TeamMember $teamMember)
+    public function show(User $user, TeamMember $teamMember, Category $category)
     {
         $pageTitle = $user->name;
         $competitions = $user->category->all();
         $members = $user->member()->orderBy('position', 'desc')->get();
         $bukti_pembayaran = $user->image()->where('type', 'Bukti Pembayaran')->get();
         $surat_pernyataan = $user->image()->where('type', 'Surat Pernyataan')->get();
+        $hasGrantedCompetition = UserMan::onlyGrantedCompetitions($user);
+        $products = $user->product()->get();
 
         return view(
             'dashboard.admin.users.show',
@@ -213,7 +216,10 @@ class UserManagementController extends Controller
                 'competitions',
                 'members',
                 'bukti_pembayaran',
-                'surat_pernyataan'
+                'surat_pernyataan',
+                'hasGrantedCompetition',
+                'products',
+                'category'
             )
         );
     }

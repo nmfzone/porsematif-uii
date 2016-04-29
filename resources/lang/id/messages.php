@@ -54,9 +54,6 @@ return [
             'destroy' => [
                 'success' => 'Anggota berhasil dihapus.',
             ],
-            'alhbr' => [
-                'error' => 'Silahkan daftar kompetisi terlebih dahulu',
-            ],
         ],
         'user' => [
             'index' => [
@@ -65,9 +62,6 @@ return [
             'update' => [
                 'success' => 'Data team berhasil di update.',
             ],
-            'alhbr' => [
-                'error' => 'Silahkan daftar kompetisi terlebih dahulu',
-            ]
         ],
         'auth' => [
             'registration' => [
@@ -91,9 +85,6 @@ return [
             'upload' => [
                 'success' => 'File berhasil di upload.',
                 'empty' => 'Form masih kosong. Masukkan sesuatu.',
-            ],
-            'alhbr' => [
-                'error' => 'Silahkan daftar kompetisi terlebih dahulu',
             ],
         ],
         'gallery' => [

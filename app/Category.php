@@ -47,4 +47,14 @@ class Category extends Model
         return $this->hasMany('App\UserCategory');
     }
 
+    /**
+     * Get the product that owns the category.
+     *
+     * @return App\Product
+     */
+    public function product()
+    {
+        return $this->hasMany('App\Product');
+    }
+
 }

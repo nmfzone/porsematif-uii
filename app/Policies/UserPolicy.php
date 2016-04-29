@@ -50,4 +50,15 @@ class UserPolicy
         return $user->hasRole("User");
     }
 
+    /**
+     * Determine if user can make product upload request.
+     *
+     * @param  App\User  $user
+     * @return bool
+     */
+    public function productUpload(User $user)
+    {
+        return $user->hasRole("User");;
+    }
+
 }

@@ -5,7 +5,6 @@
 @endsection
 
 @section('content')
-
     <div class="row row-centered homepage">
         <div class="col-md-10 col-centered">
             @if($competition == null)

@@ -165,6 +165,30 @@
 </div>
 </div>
 
+@if ($hasGrantedCompetition)
+<div class="container-fluid">
+<div class="row">
+<h3>List Karya</h3>
+@if (!$products->isEmpty())
+<table class="table table-striped the-tables">
+    <tr>
+        <th>Kompetisi</th>
+        <th>File</th>
+    </tr>
+    @foreach($products as $product)
+        <tr>
+            <td>{{ $category->find($product->id)->first()->name }}</td>
+            <td><i class="fa fa-download"></i> <a href="{{ url($product->url) }}" target="_blank">Download</a></td>
+        </tr>
+    @endforeach
+</table>
+@else
+    Belum ada karya yang ditambahkan
+    @endif
+</div>
+</div>
+@endif
+
 <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="imagesModal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">

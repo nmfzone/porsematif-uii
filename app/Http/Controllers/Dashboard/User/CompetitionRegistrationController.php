@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Dashboard\User;
 
 use App\Http\Controllers\Controller;
 //use App\Awesome\Contracts\Controllers\User\UserContract;
+use App\Awesome\Traits\Controllers\User\CompetitionTrait;
 use Message;
 
 use App\User;
@@ -18,6 +19,9 @@ use Symfony\Component\Process\Process;
 
 class CompetitionRegistrationController extends Controller
 {
+
+    use CompetitionTrait;
+
     /**
      * The loader implementation.
      *
@@ -217,19 +221,6 @@ class CompetitionRegistrationController extends Controller
             alert()->error($this->message->shout('upload.empty'))->persistent("Close");
             return redirect()->back();
         }
-    }
-
-    public function atLeatHasBeenRegistered()
-    {
-        $rs = $this->user->category()->first();
-
-        if ($rs == null) {
-            alert()->error($this->message->shout('alhbr.error'))->persistent("Close");
-
-            return "/dashboard/competitions/register";
-        }
-
-        return "";
     }
 
 }

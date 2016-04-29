@@ -143,5 +143,11 @@ Route::group(['middleware' => 'auth'], function ()
         Route::post('competitions/register', 'Dashboard\User\CompetitionRegistrationController@postRegister');
         Route::get('competitions/requirements', 'Dashboard\User\CompetitionRegistrationController@addCompetitionRequirements');
         Route::post('competitions/requirements', 'Dashboard\User\CompetitionRegistrationController@postCompetitionRequirements');
+        Route::get('competitions/product/upload', 'Dashboard\User\UserUploadController@addProduct');
+        Route::post('competitions/product/upload', 'Dashboard\User\UserUploadController@postProduct');
+        Route::delete('competitions/product/{product_id}', [
+            'as'   => 'dashboard.user.competitions.product.destroy',
+            'uses' => 'Dashboard\User\UserUploadController@destroy'
+        ]);
     });
 });

@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Dashboard\User;
 
 use App\Http\Controllers\Controller;
 use App\Awesome\Contracts\Controllers\User\UserContract;
+use App\Awesome\Traits\Controllers\User\CompetitionTrait;
 use Message;
 
 use App\User;
 use App\TeamMember;
+use App\Category;
 use App\UserCategory;
 
 use App\Http\Requests\Users\CreateUserRequest;
@@ -15,6 +17,9 @@ use App\Http\Requests\Users\UpdateUserRequest;
 
 class UserController extends Controller implements UserContract
 {
+
+    use CompetitionTrait;
+
     /**
      * The loader implementation.
      *
@@ -43,7 +48,7 @@ class UserController extends Controller implements UserContract
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Category $category)
     {
         $check = $this->atLeatHasBeenRegistered();
         if ("" != $check) {
@@ -55,8 +60,19 @@ class UserController extends Controller implements UserContract
         $members = $this->user->member()->orderBy('position', 'desc')->get();
         $bukti_pembayaran = $this->user->image()->where('type', 'Bukti Pembayaran')->get();
         $surat_pernyataan = $this->user->image()->where('type', 'Surat Pernyataan')->get();
+        $products = $this->user->product()->get();
 
-        return view('dashboard.user.users.index', compact('pageTitle', 'user', 'members', 'bukti_pembayaran', 'surat_pernyataan'));
+        return view(
+            'dashboard.user.users.index',
+            compact('pageTitle',
+                    'user',
+                    'members',
+                    'bukti_pembayaran',
+                    'surat_pernyataan',
+                    'products',
+                    'category'
+            )
+        );
     }
 
     /**
@@ -144,16 +160,4 @@ class UserController extends Controller implements UserContract
         return $this->edit($this->user, true, $pageTitle);
     }
 
-    public function atLeatHasBeenRegistered()
-    {
-        $rs = $this->user->category()->first();
-
-        if ($rs == null) {
-            alert()->error($this->message->shout('alhbr.error'))->persistent("Close");
-
-            return "/dashboard/competitions/register";
-        }
-
-        return "";
-    }
 }

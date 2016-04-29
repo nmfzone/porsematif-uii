@@ -115,6 +115,16 @@ class User extends Model implements AuthenticatableContract,
     }
 
     /**
+     * Get the product that owns the user.
+     *
+     * @return App\Product
+     */
+    public function product()
+    {
+        return $this->hasMany('App\Product');
+    }
+
+    /**
      * Get the message that owns the user.
      *
      * @return App\Message
@@ -122,6 +132,24 @@ class User extends Model implements AuthenticatableContract,
     public function message()
     {
         return $this->belongsToMany('App\Message', 'message_details', 'message_id', 'sender_id');
+    }
+
+    /**
+     * Check is user has given category or not.
+     *
+     * @param  string|int  $key
+     * @return bool
+     */
+    public function hasCategory($key)
+    {
+        foreach($this->category as $category) {
+            if ((Str::upper($category->name) == Str::upper($key)) ||
+                ($category->id == $key)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     /**

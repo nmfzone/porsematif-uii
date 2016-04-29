@@ -8,9 +8,22 @@ use Carbon\Carbon;
 use App\User;
 use App\UserCategory;
 use App\Awesome\Contracts\Facades\UserManagementContract;
+use App\Awesome\Traits\Controllers\User\CompetitionTrait;
 
 class UserManagementImpl implements UserManagementContract
 {
+
+    use CompetitionTrait;
+
+    /**
+     * The constructor.
+     *
+     */
+    public function __construct()
+    {
+        $this->initialization();
+    }
+
     /**
      * Count the user that register on that day.
      *
