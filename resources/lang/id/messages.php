@@ -92,6 +92,12 @@ return [
                 'success'  => 'Gambar berhasil di upload.',
             ],
         ],
+        'user_upload' => [
+            'product' => [
+                'success' => 'File berhasil di upload.',
+                'error' => 'Maaf ada kesalahan sistem :(',
+            ],
+        ],
     ],
 
 ];
