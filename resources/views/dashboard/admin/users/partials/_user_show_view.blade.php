@@ -178,7 +178,7 @@
     @foreach($products as $product)
         <tr>
             <td>{{ $category->find($product->id)->first()->name }}</td>
-            <td><i class="fa fa-download"></i> <a href="{{ url($product->url) }}" target="_blank">Download</a></td>
+            <td><i class="fa fa-download"></i> <a href="{{ url('files/download/karya/' . $product->name) }}" target="_blank">Download</a></td>
         </tr>
     @endforeach
 </table>

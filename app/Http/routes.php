@@ -150,4 +150,6 @@ Route::group(['middleware' => 'auth'], function ()
             'uses' => 'Dashboard\User\UserUploadController@destroy'
         ]);
     });
+
+    Route::get('files/download/{file_type}/{file_name}', 'DownloadController@getFiles');
 });
