@@ -101,7 +101,7 @@
                             <div class="alert alert-success text-center">
                                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                                 <b style="font-size: 17px;">Pengumuman</b><br><br>
-                                Pendaftaran di semua kompetisi di perpanjang sampai tanggal <b>25 April 2016</b>. Silahkan mendaftar bagi yang belum mendaftar. Dan bagi yang sudah mendaftar, silahkan bersiap-siap sampai kompetisi dimulai. Ganbatte!
+                                Batas pengumpulan proposal Web Development Competition diperpanjang sampai tanggal <b>30 April 2016</b>. Silahkan upload melalui dashboard masing-masing team. Terimakasih
                             </div>
                         </div>
                     </div>

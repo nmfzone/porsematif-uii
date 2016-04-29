@@ -133,9 +133,10 @@ class AuthController extends Controller
 
     public function getRegistration()
     {
-        $pageTitle = "Registration Area";
+        return redirect()->back(); // Registration Ended
+        //$pageTitle = "Registration Area";
 
-        return view('auth.register', compact('pageTitle'));
+        //return view('auth.register', compact('pageTitle'));
     }
 
     public function postRegistration(UserRegistrationRequest $request, User $user)
