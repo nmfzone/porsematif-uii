@@ -172,52 +172,7 @@
                     </div>
                 </div>
             </div>
-            <div class="section section-dark section-contacts" id="contacts">
-                <div class="container text-center">
-                    <h4 class="header-text">Contacts</h4>
-                    <div class="row">
-                        <div class="col-md-4 t-box text-center">
-                            <div class="title">
-                                <h4>Seminar</h4>
-                            </div>
-                            <div class="logo">
-                                <i class="fa fa-mobile"></i>
-                            </div>
-                            <div class="content">
-                                <p>+6282134300518</p>
-                                <p>tachmidz96@gmail.com</p>
-                                <p>Line : tahmid1412</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 t-box">
-                            <div class="title">
-                                <h4>Web Development</h4>
-                            </div>
-                            <div class="logo">
-                                <i class="fa fa-mobile"></i>
-                            </div>
-                            <div class="content">
-                                 <p>+6281328733696</p>
-                                <p>nabilftd@gmail.com</p>
-                                <p>Line : nabilftd</p>
-                            </div>
-                        </div>
-                         <div class="col-md-4 t-box">
-                            <div class="title">
-                                <h4>Programming</h4>
-                            </div>
-                            <div class="logo">
-                                <i class="fa fa-mobile"></i>
-                            </div>
-                            <div class="content">
-                                 <p>+6285878770006</p>
-                                <p>-</p>
-                                <p>Line : -</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @include('layouts.partials._contacts_main')
             <div class="section section-testimonial">
                 <div class="container">
                     <h4 class="header-text text-center">What people think</h4>
@@ -271,26 +226,7 @@
 </div>
                 </div>
             </div>
-            <div class="section section-gray section-clients" id="sponsors">
-                <div class="container text-center">
-                    <h4 class="header-text">Our Sponsors</h4>
-                    <div class="logos">
-                        <ul class="list-unstyled">
-                            <li><img src="{{ asset('assets/images/gameloft-indonesia.png') }}" width="200px" /></li>
-                            <li><img src="{{ asset('assets/images/yamaha-indonesia.jpg') }}" width="400px" /></li>
-                            <br><br>
-                            <li><img src="{{ asset('assets/images/bakpiapia.png') }}" width="350px" /></li>
-                            <li><img src="{{ asset('assets/images/starcomp.png') }}" width="250px" /></li>
-                            <br><br>
-                            <li><img src="{{ asset('assets/images/mangrove.png') }}" width="250px" /></li>
-                            <li><img src="{{ asset('assets/images/movie-box.png') }}" width="300px" /></li>
-                            <br><br>
-                            <li><img src="{{ asset('assets/images/dipo_bakery.png') }}" width="200px" /></li>
-                            <li><img src="{{ asset('assets/images/capcuzz.png') }}" width="170px" /></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            @include('layouts.partials._sponsors_main')
             <footer class="footer">
                 <div class="container">
                     <nav class="pull-left">
