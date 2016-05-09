@@ -215,6 +215,10 @@ $(function() {
       $('#imagemodal').modal('show');
     });
 
+    if (winWidth <= 480) {
+      $('.logos img').attr('width', '85%');
+    }
+
     jQuery(window).resize(function () {
       winWidth = jQuery(document.body).width();
       winHeight = jQuery(document.body).height();
